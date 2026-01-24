@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
+        //test
         rb = GetComponent<Rigidbody2D>();
     }
     void Update()
