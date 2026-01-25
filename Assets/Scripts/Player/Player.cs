@@ -2,24 +2,78 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private Rigidbody2D rb;
-    private float xInput;
+    public Animator anim { get; private set; }
+    public Rigidbody2D rb { get; private set; }
+
+    private PlayerInputSet input;
+    private StateMachine stateMachine;
+
+    public Player_IdleState idleState { get; private set; }
+    public Player_MoveState moveState { get; private set; }
+    
+    public Vector2 moveInput { get; private set; }
+
+    [Header("Movement Details")]
+    public float moveSpeed;
+    private bool facingRight = true;
+
+    [Header("Health")]
     public int health = 5;
     public int maxHealth = 5;
-
     public const int MAX_HEALTH_CAP = 7;
-
-    [Header("Movement")]
-    public float moveSpeed = 3.5f;
-
+    
     private void Awake()
     {
+        anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
-    }
-    void Update()
-    {
-       // xInput = Input.GetAxisRaw("Horizontal");
 
-       // rb.linearVelocity = new Vector2(xInput * moveSpeed, rb.linearVelocity.y);
+        input = new PlayerInputSet();
+        stateMachine = new StateMachine();
+
+        idleState = new Player_IdleState(this, stateMachine, "idle");
+        moveState = new Player_MoveState(this, stateMachine, "move");
+    }
+    
+    private void OnEnable()
+    {
+        input.Enable();
+
+        input.Player.Movement.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
+        input.Player.Movement.canceled += ctx => moveInput = Vector2.zero;
+    }
+
+    private void OnDisable()
+    {
+        input.Disable();
+    }
+
+    private void Start()
+    {
+        stateMachine.Initialize(idleState);
+    }
+
+    private void Update()
+    {
+        stateMachine.UpdateActiveState();
+    }
+
+    public void SetVelocity(float xVelocity, float yVelocity)
+    {
+        rb.linearVelocity = new Vector2(xVelocity, yVelocity);
+        HandleFlip(xVelocity);
+    }
+
+    private void HandleFlip(float xVelocity)
+    {
+        if (xVelocity > 0 && facingRight == false)
+            Flip();
+        else if (xVelocity < 0 && facingRight == true)
+            Flip();
+    }
+
+    private void Flip()
+    {
+        transform.Rotate(0, 180, 0);
+        facingRight = !facingRight;
     }
 }
