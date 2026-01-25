@@ -91,6 +91,83 @@ public class Player : MonoBehaviour
         facingRight = !facingRight;
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Item item = other.gameObject.GetComponent<Item>();
+        if (item == null)
+        {
+            return;
+        }
+
+        Debug.Log("Trigger with " + item.itemType);
+
+        bool canCollect = true;
+
+        switch (item.itemType)
+        {
+            case ItemType.HealthPotion:
+                // Check if already at max health cap
+                if (maxHealth >= MAX_HEALTH_CAP)
+                {
+                    Debug.Log("Max health already at cap (" + MAX_HEALTH_CAP + "), cannot collect");
+                    canCollect = false;
+                    break;
+                }
+                
+                // Increase health but clamp to cap
+                maxHealth = Mathf.Min(maxHealth + item.healthIncrease, MAX_HEALTH_CAP);
+                Debug.Log("Max Health: " + maxHealth);
+                break;
+                
+            case ItemType.SpeedPotion:
+                moveSpeed += item.speedIncrease;
+                Debug.Log("Move Speed: " + moveSpeed);
+                break;
+
+            case ItemType.HealingPotion:
+                if(health == maxHealth)
+                {
+                    Debug.Log("Health is already at max (" + health + "), cannot collect");
+                    canCollect = false;
+                    break;
+                }
+                health = Mathf.Min(health + item.healingAmount, maxHealth);
+                Debug.Log("Health: " + health);
+                break;
+        }
+
+        if (canCollect)
+        {
+            // Remove the collected item
+            Destroy(other.gameObject);
+        }
+        else
+        {
+            // Disable the collider to prevent repeated trigger events
+            // This prevents the visual glitch when the item can't be collected
+            Collider2D itemCollider = other.GetComponent<Collider2D>();
+            if (itemCollider != null)
+            {
+                itemCollider.enabled = false;
+            }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        // Re-enable the collider when player exits, so item can be collected later if conditions change
+        Item item = other.gameObject.GetComponent<Item>();
+        if (item != null)
+        {
+            Collider2D itemCollider = other.GetComponent<Collider2D>();
+            if (itemCollider != null && !itemCollider.enabled)
+            {
+                itemCollider.enabled = true;
+            }
+        }
+    }
+}
+
     private void HandleCollisionDetection()
     {
         groundDetected = Physics2D.Raycast(transform.position, Vector2.down, groundCheckDistance, whatIsGround);
@@ -101,3 +178,4 @@ public class Player : MonoBehaviour
         Gizmos.DrawLine(transform.position, transform.position + new Vector3(0, -groundCheckDistance));
     }
 }
+
