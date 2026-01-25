@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 246b99717c0f2284282b3037d60bdb54
+guid: 3c2e2dd2a1794bd4fbea150c1250bc0f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1732607110571705711
-    second: player_idle7_0
+      213: 8003755769264865744
+    second: player_jump7_0
+  - first:
+      213: -3281485848391930670
+    second: player_jump7_1
+  - first:
+      213: 6563541115580958734
+    second: player_jump7_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 65
+  spritePixelsToUnits: 70
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: player_idle7_0
+      name: player_jump7_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 4
-        width: 130
-        height: 187
+        x: 6
+        y: 48
+        width: 149
+        height: 170
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +121,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 19abe0f330b84f7e0800000000000000
-      internalID: -1732607110571705711
+      spriteID: 0d10408677d031f60800000000000000
+      internalID: 8003755769264865744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_jump7_1
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 41
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dca027c102d572d0800000000000000
+      internalID: -3281485848391930670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_jump7_2
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 36
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e08cfd69ed1661b50800000000000000
+      internalID: 6563541115580958734
       vertices: []
       indices: 
       edges: []
@@ -135,7 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      player_idle7_0: -1732607110571705711
+      player_jump7_0: 8003755769264865744
+      player_jump7_1: -3281485848391930670
+      player_jump7_2: 6563541115580958734
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
