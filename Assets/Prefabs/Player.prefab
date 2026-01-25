@@ -213,8 +213,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.22712064}
-  m_Size: {x: 0.9839163, y: 2.4220738}
+  m_Offset: {x: 0, y: -0.25684574}
+  m_Size: {x: 0.9839163, y: 2.481524}
   m_Direction: 0
 --- !u!114 &1220272573849419995
 MonoBehaviour:
@@ -229,6 +229,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
   moveSpeed: 8
+  jumpForce: 13
+  inAirMoveMultiplier: 0.7
+  groundCheckDistance: 1.5
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 64
   health: 5
   maxHealth: 5
 --- !u!1 &1425145258151311536
