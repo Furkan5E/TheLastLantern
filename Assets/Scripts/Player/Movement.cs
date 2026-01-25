@@ -4,6 +4,10 @@ public class Player : MonoBehaviour
 {
     private Rigidbody2D rb;
     private float xInput;
+    public int health = 5;
+    public int maxHealth = 5;
+
+    public const int MAX_HEALTH_CAP = 7;
 
     [Header("Movement")]
     public float moveSpeed = 3.5f;
