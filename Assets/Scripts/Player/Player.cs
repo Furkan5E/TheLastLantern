@@ -2,24 +2,48 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private Rigidbody2D rb;
-    private float xInput;
-    public int health = 5;
-    public int maxHealth = 5;
+    private PlayerInputSet input;
 
-    public const int MAX_HEALTH_CAP = 7;
+    private StateMachine stateMachine;
+    public Player_IdleState idleState { get; private set; }
+    public Player_MoveState moveState { get; private set; }
+    public Vector2 moveInput { get; private set; }
 
     [Header("Movement")]
     public float moveSpeed = 3.5f;
 
+    [Header("Health")]
+    public int health = 5;
+    public int maxHealth = 5;
+    public const int MAX_HEALTH_CAP = 7;
+    
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
+        input = new PlayerInputSet();
+        stateMachine = new StateMachine();
+        idleState = new Player_IdleState(this, stateMachine, "idle");
+        moveState = new Player_MoveState(this, stateMachine, "move");
     }
-    void Update()
+    private void OnEnable()
     {
-       // xInput = Input.GetAxisRaw("Horizontal");
+        input.Enable();
 
-       // rb.linearVelocity = new Vector2(xInput * moveSpeed, rb.linearVelocity.y);
+        input.Player.Movement.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
+        input.Player.Movement.canceled += ctx => moveInput = Vector2.zero;
+    }
+
+    private void OnDisable()
+    {
+        input.Disable();
+    }
+
+    private void Start()
+    {
+        stateMachine.Initialize(idleState);
+    }
+
+    private void Update()
+    {
+        stateMachine.currentState.Update();
     }
 }
