@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
 
     [Header("Movement Details")]
     public float moveSpeed;
+    private bool facingRight = true;
 
     [Header("Health")]
     public int health = 5;
@@ -59,5 +60,20 @@ public class Player : MonoBehaviour
     public void SetVelocity(float xVelocity, float yVelocity)
     {
         rb.linearVelocity = new Vector2(xVelocity, yVelocity);
+        HandleFlip(xVelocity);
+    }
+
+    private void HandleFlip(float xVelocity)
+    {
+        if (xVelocity > 0 && facingRight == false)
+            Flip();
+        else if (xVelocity < 0 && facingRight == true)
+            Flip();
+    }
+
+    private void Flip()
+    {
+        transform.Rotate(0, 180, 0);
+        facingRight = !facingRight;
     }
 }
