@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 246b99717c0f2284282b3037d60bdb54
+guid: a10b3520caa9ca8408893c5e36ff1274
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1732607110571705711
-    second: player_idle7_0
+      213: -15056097725527025
+    second: Untitled_Artwork-5_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -46,12 +46,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 65
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,12 +100,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: player_idle7_0
+      name: Untitled_Artwork-5_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 4
-        width: 130
+        x: 0
+        y: 22
+        width: 150
         height: 187
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 19abe0f330b84f7e0800000000000000
-      internalID: -1732607110571705711
+      spriteID: f0ccd531f828acff0800000000000000
+      internalID: -15056097725527025
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      player_idle7_0: -1732607110571705711
+      Untitled_Artwork-5_0: -15056097725527025
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
