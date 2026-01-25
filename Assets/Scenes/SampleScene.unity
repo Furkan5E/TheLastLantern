@@ -188,8 +188,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.0040327907}
-  m_Size: {x: 0.9839163, y: 1.9758979}
+  m_Offset: {x: 0, y: -0.22712064}
+  m_Size: {x: 0.9839163, y: 2.4220738}
   m_Direction: 0
 --- !u!50 &447294736
 Rigidbody2D:
@@ -230,6 +230,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ca26283a4198ea449289e451eddbc41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
+  health: 5
+  maxHealth: 5
   moveSpeed: 3.5
 --- !u!1 &519420028
 GameObject:
@@ -411,7 +413,7 @@ Animator:
   m_GameObject: {fileID: 544847040}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3513e4bb20ab11e4b991a5c9f17d3537, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -472,7 +474,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
+  m_Sprite: {fileID: 1929685790754269422, guid: 599a38b3693fe4b48a49f4b98dd4f2ca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

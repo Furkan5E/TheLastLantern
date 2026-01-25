@@ -14,13 +14,12 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        //test
         rb = GetComponent<Rigidbody2D>();
     }
     void Update()
     {
-        xInput = Input.GetAxisRaw("Horizontal");
+       // xInput = Input.GetAxisRaw("Horizontal");
 
-        rb.linearVelocity = new Vector2(xInput * moveSpeed, rb.linearVelocity.y);
+       // rb.linearVelocity = new Vector2(xInput * moveSpeed, rb.linearVelocity.y);
     }
 }
