@@ -91,6 +91,16 @@ public class Player : MonoBehaviour
         facingRight = !facingRight;
     }
 
+    private void HandleCollisionDetection()
+    {
+        groundDetected = Physics2D.Raycast(transform.position, Vector2.down, groundCheckDistance, whatIsGround);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawLine(transform.position, transform.position + new Vector3(0, -groundCheckDistance));
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         Item item = other.gameObject.GetComponent<Item>();
@@ -166,15 +176,4 @@ public class Player : MonoBehaviour
             }
         }
     }
-
-    private void HandleCollisionDetection()
-    {
-        groundDetected = Physics2D.Raycast(transform.position, Vector2.down, groundCheckDistance, whatIsGround);
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawLine(transform.position, transform.position + new Vector3(0, -groundCheckDistance));
-    }
 }
-
