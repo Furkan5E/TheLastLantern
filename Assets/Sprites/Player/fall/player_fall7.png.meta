@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -103,10 +103,10 @@ TextureImporter:
       name: player_fall7_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 2
-        width: 143
-        height: 180
+        x: 2
+        y: 3
+        width: 142
+        height: 177
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

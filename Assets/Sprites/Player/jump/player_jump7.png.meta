@@ -5,12 +5,6 @@ TextureImporter:
   - first:
       213: 8003755769264865744
     second: player_jump7_0
-  - first:
-      213: -3281485848391930670
-    second: player_jump7_1
-  - first:
-      213: 6563541115580958734
-    second: player_jump7_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -43,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -109,10 +103,10 @@ TextureImporter:
       name: player_jump7_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 48
-        width: 149
-        height: 170
+        x: 1
+        y: 49
+        width: 154
+        height: 165
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -123,50 +117,6 @@ TextureImporter:
       bones: []
       spriteID: 0d10408677d031f60800000000000000
       internalID: 8003755769264865744
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: player_jump7_1
-      rect:
-        serializedVersion: 2
-        x: 47
-        y: 41
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2dca027c102d572d0800000000000000
-      internalID: -3281485848391930670
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: player_jump7_2
-      rect:
-        serializedVersion: 2
-        x: 100
-        y: 36
-        width: 12
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e08cfd69ed1661b50800000000000000
-      internalID: 6563541115580958734
       vertices: []
       indices: 
       edges: []
@@ -186,8 +136,6 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       player_jump7_0: 8003755769264865744
-      player_jump7_1: -3281485848391930670
-      player_jump7_2: 6563541115580958734
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
