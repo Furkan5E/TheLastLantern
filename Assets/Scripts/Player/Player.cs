@@ -14,12 +14,23 @@ public class Player : MonoBehaviour
     public Player_MoveState moveState { get; private set; }
     public Player_JumpState jumpState { get; private set; }
     public Player_FallState fallState {get; private set; }
+    public Player_BasicAttackState basicAttackState { get; private set; }
+
+    [Header("Attack Details")]
+    public Vector2 attackVelocity;
+    public float attackVelocityDuration = 0.1f;
 
     [Header("Movement Details")]
     public float moveSpeed;
     public float jumpForce = 5f;
     public float inAirMoveMultiplier = 0.7f;
-    private bool facingRight = true;
+    
+    // NOTE: Commented out for the sake of attack velocity generation
+    // In the tutorial there is a facingDir property that is public (already created from prev videos)
+    // FOR Furkan - If you stumble accros the facingDir property in the tutorial lmk
+    // private bool facingRight = true;
+    // public bool facingRight { get; private set; } = true;
+    public bool facingRight = true;
 
     public Vector2 moveInput { get; private set; }
 
@@ -45,6 +56,7 @@ public class Player : MonoBehaviour
         moveState = new Player_MoveState(this, stateMachine, "move");
         jumpState = new Player_JumpState(this, stateMachine, "jumpFall");
         fallState = new Player_FallState(this, stateMachine, "jumpFall");
+        basicAttackState = new Player_BasicAttackState(this, stateMachine, "basicAttack");
     }
 
     private void OnEnable()
@@ -69,6 +81,11 @@ public class Player : MonoBehaviour
     {
         HandleCollisionDetection();
         stateMachine.UpdateActiveState();
+    }
+
+    public void CallAnimationTrigger()
+    {
+        stateMachine.currentState.CallAnimationTrigger();
     }
 
     public void SetVelocity(float xVelocity, float yVelocity)
