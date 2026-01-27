@@ -1,5 +1,3 @@
-using System;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -14,6 +12,7 @@ public class Player : MonoBehaviour
     public Player_MoveState moveState { get; private set; }
     public Player_JumpState jumpState { get; private set; }
     public Player_FallState fallState {get; private set; }
+    public Player_WallSlideState wallSlideState { get; private set; }
     public Player_BasicAttackState basicAttackState { get; private set; }
 
     [Header("Attack Details")]
@@ -23,7 +22,14 @@ public class Player : MonoBehaviour
     [Header("Movement Details")]
     public float moveSpeed;
     public float jumpForce = 5f;
+    [Range(0, 1)]
     public float inAirMoveMultiplier = 0.7f;
+
+    [Range(0, 1)]
+    public float wallSlideSlowMultiplier = 0.7f;
+//     private bool facingRight = true;
+    private int facingDir = 1;
+
     
     // NOTE: Commented out for the sake of attack velocity generation
     // In the tutorial there is a facingDir property that is public (already created from prev videos)
@@ -32,12 +38,15 @@ public class Player : MonoBehaviour
     // public bool facingRight { get; private set; } = true;
     public bool facingRight = true;
 
+
     public Vector2 moveInput { get; private set; }
 
     [Header("Collision detection")]
     [SerializeField] private float groundCheckDistance;
+    [SerializeField] private float wallCheckDistance;
     [SerializeField] private LayerMask whatIsGround;
     public bool groundDetected { get; private set; }
+    public bool wallDetected { get; private set; }
 
     [Header("Health")]
     public int health = 5;
@@ -56,6 +65,7 @@ public class Player : MonoBehaviour
         moveState = new Player_MoveState(this, stateMachine, "move");
         jumpState = new Player_JumpState(this, stateMachine, "jumpFall");
         fallState = new Player_FallState(this, stateMachine, "jumpFall");
+        wallSlideState = new Player_WallSlideState(this, stateMachine, "wallSlide");
         basicAttackState = new Player_BasicAttackState(this, stateMachine, "basicAttack");
     }
 
@@ -102,10 +112,23 @@ public class Player : MonoBehaviour
             Flip();
     }
 
-    private void Flip()
+    public void Flip()
     {
         transform.Rotate(0, 180, 0);
         facingRight = !facingRight;
+        facingDir *= -1;
+    }
+
+    private void HandleCollisionDetection()
+    {
+        groundDetected = Physics2D.Raycast(transform.position, Vector2.down, groundCheckDistance, whatIsGround);
+        wallDetected = Physics2D.Raycast(transform.position, Vector2.right * facingDir, wallCheckDistance, whatIsGround);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawLine(transform.position, transform.position + new Vector3(0, -groundCheckDistance));
+        Gizmos.DrawLine(transform.position, transform.position + new Vector3(wallCheckDistance * facingDir, 0));
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -183,15 +206,4 @@ public class Player : MonoBehaviour
             }
         }
     }
-
-    private void HandleCollisionDetection()
-    {
-        groundDetected = Physics2D.Raycast(transform.position, Vector2.down, groundCheckDistance, whatIsGround);
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawLine(transform.position, transform.position + new Vector3(0, -groundCheckDistance));
-    }
 }
-
