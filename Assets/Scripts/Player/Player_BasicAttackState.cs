@@ -33,6 +33,6 @@ public class Player_BasicAttackState : EntityState
     private void GenerateAttackVelocity()
     {
         attackVelocityTimer = player.attackVelocityDuration;
-        player.SetVelocity(player.attackVelocity.x * (player.facingRight ? 1 : -1), player.attackVelocity.y);
+        player.SetVelocity(player.attackVelocity.x * player.facingDir, player.attackVelocity.y);
     }
 }
