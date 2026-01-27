@@ -12,6 +12,8 @@
 /[Uu]ser[Ss]ettings/
 *.log
 
+
+.DS_Store
 # By default unity supports Blender asset imports, *.blend1 blender files do not need to be commited to version control.
 *.blend1
 *.blend1.meta
@@ -99,3 +101,12 @@ InitTestScene*.unity*
 
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
+# macOS
+.DS_Store
+**/.DS_Store
+
+
+# macOS
+.DS_Store
+**/.DS_Store
+
