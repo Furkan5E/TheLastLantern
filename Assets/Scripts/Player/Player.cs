@@ -29,13 +29,7 @@ public class Player : MonoBehaviour
     [Range(0, 1)]
     public float wallSlideSlowMultiplier = 0.7f;
     public int facingDir = 1;
-
-
-    // NOTE: Commented out for the sake of attack velocity generation
-    // In the tutorial there is a facingDir property that is public (already created from prev videos)
-    // FOR Furkan - If you stumble accros the facingDir property in the tutorial lmk
     private bool facingRight = true;
-
 
     public Vector2 moveInput { get; private set; }
 

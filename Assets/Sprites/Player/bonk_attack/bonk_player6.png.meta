@@ -106,7 +106,7 @@ TextureImporter:
       name: bonk_player6_0
       rect:
         serializedVersion: 2
-        x: 8
+        x: 20
         y: 3
         width: 127
         height: 174
@@ -128,7 +128,7 @@ TextureImporter:
       name: bonk_player6_1
       rect:
         serializedVersion: 2
-        x: 22
+        x: 106
         y: 161
         width: 27
         height: 36
