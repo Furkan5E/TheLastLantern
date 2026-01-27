@@ -106,10 +106,10 @@ TextureImporter:
       name: bonk_player4_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 68
-        width: 21
-        height: 82
+        x: 0
+        y: 3
+        width: 140
+        height: 184
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,10 +128,10 @@ TextureImporter:
       name: bonk_player4_1
       rect:
         serializedVersion: 2
-        x: 15
-        y: 3
-        width: 140
-        height: 184
+        x: 130
+        y: 68
+        width: 21
+        height: 82
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
