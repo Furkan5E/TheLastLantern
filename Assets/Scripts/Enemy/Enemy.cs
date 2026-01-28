@@ -18,22 +18,23 @@ public class Enemy : MonoBehaviour
     {
         float direction = Mathf.Sign(player.position.x - transform.position.x);
 
-        // Move
-        rb.linearVelocity = new Vector2(direction * speed, rb.linearVelocity.y);
-
         // Raycast origin slightly above the feet
         Vector2 origin = (Vector2)transform.position + Vector2.down * 0.5f;
         Vector2 forwardDir = Vector2.right * direction;
 
         // Check ground in front
-        RaycastHit2D frontHit = Physics2D.Raycast(origin, forwardDir, 2.5f, groundLayer);
+        RaycastHit2D frontHit = Physics2D.Raycast(origin, forwardDir, 1f, groundLayer);
 
         // Optional: still ensure enemy is grounded before jumping
         isGrounded = Physics2D.Raycast(origin, Vector2.down, 1f, groundLayer);
 
-        if (isGrounded && frontHit.collider != null)
-        {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 7f);
+        if (isGrounded && frontHit.collider == null)
+        {   // Move
+            rb.linearVelocity = new Vector2(direction * speed, rb.linearVelocity.y);
+        }
+        else
+        {   // Stop
+            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
         }
     }
 }
