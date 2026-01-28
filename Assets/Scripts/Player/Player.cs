@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -11,13 +12,15 @@ public class Player : MonoBehaviour
     public Player_IdleState idleState { get; private set; }
     public Player_MoveState moveState { get; private set; }
     public Player_JumpState jumpState { get; private set; }
-    public Player_FallState fallState {get; private set; }
+    public Player_FallState fallState { get; private set; }
     public Player_WallSlideState wallSlideState { get; private set; }
     public Player_BasicAttackState basicAttackState { get; private set; }
 
     [Header("Attack Details")]
-    public Vector2 attackVelocity;
+    public Vector2[] attackVelocity;
     public float attackVelocityDuration = 0.1f;
+    public float comboResetTime = 1f;
+    private Coroutine queuedAttackCoroutine;
 
     [Header("Movement Details")]
     public float moveSpeed;
@@ -27,17 +30,8 @@ public class Player : MonoBehaviour
 
     [Range(0, 1)]
     public float wallSlideSlowMultiplier = 0.7f;
-//     private bool facingRight = true;
-    private int facingDir = 1;
-
-    
-    // NOTE: Commented out for the sake of attack velocity generation
-    // In the tutorial there is a facingDir property that is public (already created from prev videos)
-    // FOR Furkan - If you stumble accros the facingDir property in the tutorial lmk
-    // private bool facingRight = true;
-    // public bool facingRight { get; private set; } = true;
-    public bool facingRight = true;
-
+    public int facingDir = 1;
+    private bool facingRight = true;
 
     public Vector2 moveInput { get; private set; }
 
@@ -153,19 +147,19 @@ public class Player : MonoBehaviour
                     canCollect = false;
                     break;
                 }
-                
+
                 // Increase health but clamp to cap
                 maxHealth = Mathf.Min(maxHealth + item.healthIncrease, MAX_HEALTH_CAP);
                 Debug.Log("Max Health: " + maxHealth);
                 break;
-                
+
             case ItemType.SpeedPotion:
                 moveSpeed += item.speedIncrease;
                 Debug.Log("Move Speed: " + moveSpeed);
                 break;
 
             case ItemType.HealingPotion:
-                if(health == maxHealth)
+                if (health == maxHealth)
                 {
                     Debug.Log("Health is already at max (" + health + "), cannot collect");
                     canCollect = false;
@@ -205,5 +199,18 @@ public class Player : MonoBehaviour
                 itemCollider.enabled = true;
             }
         }
+    }
+
+    public void EnterAttackStateWithDelay()
+    {
+        if (queuedAttackCoroutine != null)
+            StopCoroutine(queuedAttackCoroutine);
+
+        queuedAttackCoroutine = StartCoroutine(EnterAttackStateWithDelayCoroutine());
+    }
+    private IEnumerator EnterAttackStateWithDelayCoroutine()
+    {
+        yield return new WaitForEndOfFrame();
+        stateMachine.ChangeState(basicAttackState);
     }
 }
