@@ -3,15 +3,19 @@ using UnityEngine;
 public class Player_BasicAttackState : EntityState
 {
     private float attackVelocityTimer;
-
-    private const int FirstComboIndex = 1;
-    private int comboIndex = FirstComboIndex;
-    private int comboLimit = 3;
-
     private float lastTimeAttacked;
+
+    private bool comboAttackQueued;
+    private const int FirstComboIndex = 1;
+
+    private int comboIndex = 1;
+    private int comboLimit = 3;
+    private int attackDir;
+
     public Player_BasicAttackState(Player player, StateMachine stateMachine, string animBoolName) : base(player, stateMachine, animBoolName)
     {
-        if (player.attackVelocity.Length != comboLimit){
+        if (player.attackVelocity.Length != comboLimit)
+        {
             Debug.LogWarning("Player_BasicAttackState: attackVelocity array length changed to " + player.attackVelocity.Length);
             comboLimit = player.attackVelocity.Length;
         }
@@ -20,19 +24,25 @@ public class Player_BasicAttackState : EntityState
     public override void Enter()
     {
         base.Enter();
+        comboAttackQueued = false;
         ResetComboIndexIfNeeded();
+
+        attackDir = player.moveInput.x != 0 ? ((int)player.moveInput.x) : player.facingDir;
 
         anim.SetInteger("basicAttackIndex", comboIndex);
         ApplyAttackVelocity();
+        Debug.Log($"Attack performed (combo {comboIndex}/{comboLimit})");
     }
 
     public override void Update()
     {
         base.Update();
         HandleAttackVelocity();
+        if (input.Player.Attack.WasPressedThisFrame())
+            QueueNextAttack();
 
         if (triggerCalled)
-            stateMachine.ChangeState(player.idleState);
+            HandleStateExit();
     }
 
     public override void Exit()
@@ -40,6 +50,23 @@ public class Player_BasicAttackState : EntityState
         base.Exit();
         comboIndex++;
         lastTimeAttacked = Time.time;
+    }
+
+    private void QueueNextAttack()
+    {
+        if (comboIndex < comboLimit)
+            comboAttackQueued = true;
+    }
+
+    private void HandleStateExit()
+    {
+        if(comboAttackQueued)
+        {
+            anim.SetBool(animBoolName, false);
+            player.EnterAttackStateWithDelay();
+        }
+        else
+            stateMachine.ChangeState(player.idleState);
     }
 
     private void HandleAttackVelocity()
@@ -54,7 +81,7 @@ public class Player_BasicAttackState : EntityState
     {
         Vector2 attackVelocity = player.attackVelocity[comboIndex - 1];
         attackVelocityTimer = player.attackVelocityDuration;
-        player.SetVelocity(attackVelocity.x * player.facingDir, attackVelocity.y);
+        player.SetVelocity(attackVelocity.x * attackDir, attackVelocity.y);
     }
 
     private void ResetComboIndexIfNeeded()
