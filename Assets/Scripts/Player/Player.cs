@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -46,6 +47,8 @@ public class Player : MonoBehaviour
     [SerializeField] private float groundCheckDistance;
     [SerializeField] private float wallCheckDistance;
     [SerializeField] private LayerMask whatIsGround;
+    [SerializeField] private Transform primaryWallcheck;
+    [SerializeField] private Transform secondaryWallcheck;
     public bool groundDetected { get; private set; }
     public bool wallDetected { get; private set; }
 
@@ -126,13 +129,16 @@ public class Player : MonoBehaviour
     private void HandleCollisionDetection()
     {
         groundDetected = Physics2D.Raycast(transform.position, Vector2.down, groundCheckDistance, whatIsGround);
-        wallDetected = Physics2D.Raycast(transform.position, Vector2.right * facingDir, wallCheckDistance, whatIsGround);
+        wallDetected = Physics2D.Raycast(primaryWallcheck.position, Vector2.right * facingDir, wallCheckDistance, whatIsGround)
+                    && Physics2D.Raycast(secondaryWallcheck.position, Vector2.right * facingDir, wallCheckDistance, whatIsGround);
+
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.DrawLine(transform.position, transform.position + new Vector3(0, -groundCheckDistance));
-        Gizmos.DrawLine(transform.position, transform.position + new Vector3(wallCheckDistance * facingDir, 0));
+        Gizmos.DrawLine(primaryWallcheck.position, primaryWallcheck.position + new Vector3(wallCheckDistance * facingDir, 0));
+        Gizmos.DrawLine(secondaryWallcheck.position, secondaryWallcheck.position + new Vector3(wallCheckDistance * facingDir, 0));
     }
 
     private void OnTriggerEnter2D(Collider2D other)
