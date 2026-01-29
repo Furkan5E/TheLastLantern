@@ -1287,11 +1287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue
   textComponent: {fileID: 748558066}
   lines:
-  - Yo mein there is a bich ass up ahead
-  - You gonna have to kill him
-  - Now or later
-  - Preferably now...
-  - Ok go kill him now
+  - Careful, there are dangerous enemies up ahead
   textSpeed: 0.075
 --- !u!1 &1279232347
 GameObject:
