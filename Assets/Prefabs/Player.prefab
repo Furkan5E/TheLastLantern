@@ -245,13 +245,14 @@ MonoBehaviour:
   - {x: 3, y: 1.5}
   - {x: 1, y: 2.5}
   - {x: 2.75, y: 1.75}
+  jumpAttackVelocity: {x: 0, y: 0}
   attackVelocityDuration: 0.1
   comboResetTime: 1
   moveSpeed: 8
   jumpForce: 13
+  wallJumpForce: {x: 6, y: 12}
   inAirMoveMultiplier: 0.7
   wallSlideSlowMultiplier: 0.7
-  facingDir: 1
   groundCheckDistance: 1.51
   wallCheckDistance: 0.65
   whatIsGround:
