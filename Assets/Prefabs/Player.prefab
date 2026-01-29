@@ -182,7 +182,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0.1
   m_AngularDamping: 0.05
-  m_GravityScale: 3.5
+  m_GravityScale: 3.8
   m_Material: {fileID: 6200000, guid: eb50fb70609234748a19a340af7056b1, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -247,11 +247,11 @@ MonoBehaviour:
   - {x: 3, y: 1.5}
   - {x: 1, y: 2.5}
   - {x: 2.75, y: 1.75}
-  jumpAttackVelocity: {x: 0, y: 0}
+  jumpAttackVelocity: {x: 5, y: -6}
   attackVelocityDuration: 0.1
   comboResetTime: 1
   moveSpeed: 8
-  jumpForce: 13
+  jumpForce: 14
   wallJumpForce: {x: 6, y: 12}
   inAirMoveMultiplier: 0.7
   wallSlideSlowMultiplier: 0.7
