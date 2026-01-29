@@ -15,9 +15,12 @@ public class Player : MonoBehaviour
     public Player_FallState fallState { get; private set; }
     public Player_WallSlideState wallSlideState { get; private set; }
     public Player_BasicAttackState basicAttackState { get; private set; }
+    public Player_JumpAttackState jumpAttackState { get; private set; }
+    public Player_WallJumpState wallJumpState { get; private set; }
 
     [Header("Attack Details")]
     public Vector2[] attackVelocity;
+    public Vector2 jumpAttackVelocity;
     public float attackVelocityDuration = 0.1f;
     public float comboResetTime = 1f;
     private Coroutine queuedAttackCoroutine;
@@ -25,12 +28,13 @@ public class Player : MonoBehaviour
     [Header("Movement Details")]
     public float moveSpeed;
     public float jumpForce = 5f;
+    public Vector2 wallJumpForce;
     [Range(0, 1)]
     public float inAirMoveMultiplier = 0.7f;
 
     [Range(0, 1)]
     public float wallSlideSlowMultiplier = 0.7f;
-    public int facingDir = 1;
+    public int facingDir { get; private set; } = 1;
     private bool facingRight = true;
 
     public Vector2 moveInput { get; private set; }
@@ -61,6 +65,8 @@ public class Player : MonoBehaviour
         fallState = new Player_FallState(this, stateMachine, "jumpFall");
         wallSlideState = new Player_WallSlideState(this, stateMachine, "wallSlide");
         basicAttackState = new Player_BasicAttackState(this, stateMachine, "basicAttack");
+        jumpAttackState = new Player_JumpAttackState(this, stateMachine, "jumpAttack");
+        wallJumpState = new Player_WallJumpState(this, stateMachine, "jumpFall");
     }
 
     private void OnEnable()
