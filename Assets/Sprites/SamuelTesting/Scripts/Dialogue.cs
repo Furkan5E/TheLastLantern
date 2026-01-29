@@ -38,7 +38,7 @@ public class Dialogue : MonoBehaviour
         if (lines == null || lines.Length == 0)
             return;
 
-        if (Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame)
+        if (Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame && gameObject.activeSelf)
         {
             if (textComponent.text == lines[index])
             {
@@ -112,6 +112,17 @@ public class Dialogue : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
+    }
+
+    void OnEnable()
+    {
+        if (lines == null || lines.Length == 0)
+            return;
+
+        StopAllCoroutines();
+        index = 0;
+        textComponent.text = string.Empty;
+        StartCoroutine(TypeLine());
     }
 
     // ─────────────────────────────
