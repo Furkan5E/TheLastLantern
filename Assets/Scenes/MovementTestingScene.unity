@@ -1642,6 +1642,14 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 3.142857
       objectReference: {fileID: 0}
+    - target: {fileID: 1220272573849419995, guid: ad5cac6aa73bced46a59b56dc5f971c6, type: 3}
+      propertyPath: wallJumpForce.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1220272573849419995, guid: ad5cac6aa73bced46a59b56dc5f971c6, type: 3}
+      propertyPath: wallJumpForce.y
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 6753232042171600780, guid: ad5cac6aa73bced46a59b56dc5f971c6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
