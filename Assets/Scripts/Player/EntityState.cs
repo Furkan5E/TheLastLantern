@@ -9,6 +9,7 @@ public abstract class EntityState
     protected Animator anim;
     protected Rigidbody2D rb;
     protected PlayerInputSet input;
+    
     protected bool triggerCalled;
     protected float stateTimer;
 
