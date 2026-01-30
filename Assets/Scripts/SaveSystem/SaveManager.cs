@@ -9,11 +9,12 @@ public class SaveManager : MonoBehaviour
     private GameData gameData;
     private List<ISaveable> allSaveables;
     [SerializeField] private string fileName = "save.json";
+    [SerializeField] private bool encryptData = true;
 
     private IEnumerator Start()
     {
         Debug.Log(Application.persistentDataPath);
-        dataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
+        dataHandler = new FileDataHandler(Application.persistentDataPath, fileName, encryptData);
         allSaveables = FindISaveables();
 
         yield return new WaitForSeconds(0.01f);
@@ -46,7 +47,7 @@ public class SaveManager : MonoBehaviour
     [ContextMenu("*** Delete save data ***")]
     public void DeleteSave()
     {
-        dataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
+        dataHandler = new FileDataHandler(Application.persistentDataPath, fileName, encryptData);
         dataHandler.Delete();
     }
 
