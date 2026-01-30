@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class EnemyState : EntityState
 {
@@ -14,6 +15,8 @@ public class EnemyState : EntityState
     public override void Update()
     {
         base.Update();
+        if (Keyboard.current.fKey.wasPressedThisFrame)
+            stateMachine.ChangeState(enemy.attackState);
         anim.SetFloat("runAnimSpeedMultiplier", enemy.runAnimSpeedMultiplier);
     }
 
