@@ -236,11 +236,11 @@ PrefabInstance:
       objectReference: {fileID: 1273328751}
     - target: {fileID: 6753232042171600780, guid: ad5cac6aa73bced46a59b56dc5f971c6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14
+      value: -10.28
       objectReference: {fileID: 0}
     - target: {fileID: 6753232042171600780, guid: ad5cac6aa73bced46a59b56dc5f971c6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 24.6
+      value: 24.48
       objectReference: {fileID: 0}
     - target: {fileID: 6753232042171600780, guid: ad5cac6aa73bced46a59b56dc5f971c6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -274,10 +274,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8168380758122003096, guid: ad5cac6aa73bced46a59b56dc5f971c6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 246080305471572346, guid: ad5cac6aa73bced46a59b56dc5f971c6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 654273075}
   m_SourcePrefab: {fileID: 100100000, guid: ad5cac6aa73bced46a59b56dc5f971c6, type: 3}
 --- !u!1 &301015327
 GameObject:
@@ -653,6 +657,23 @@ MonoBehaviour:
   healthIncrease: 1
   speedIncrease: 1
   healingAmount: 1
+--- !u!1 &654273070 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 246080305471572346, guid: ad5cac6aa73bced46a59b56dc5f971c6, type: 3}
+  m_PrefabInstance: {fileID: 95025683}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &654273075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654273070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 739d64cf45c2d4ad3ab64158a8c4eeb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Entity_AnimationTriggers
 --- !u!1 &807755814
 GameObject:
   m_ObjectHideFlags: 0
@@ -1394,6 +1415,7 @@ GameObject:
   - component: {fileID: 1593530706}
   - component: {fileID: 1593530708}
   - component: {fileID: 1593530707}
+  - component: {fileID: 1593530709}
   m_Layer: 0
   m_Name: Animator
   m_TagString: Untagged
@@ -1497,6 +1519,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1593530709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593530705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 739d64cf45c2d4ad3ab64158a8c4eeb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Entity_AnimationTriggers
 --- !u!1 &1621902988
 GameObject:
   m_ObjectHideFlags: 0
@@ -1873,7 +1907,7 @@ Transform:
   m_GameObject: {fileID: 1701153389}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.55, y: 21.05, z: 0}
+  m_LocalPosition: {x: -6.38, y: 25.11, z: 0}
   m_LocalScale: {x: 1.2386, y: 11.394346, z: 1.2386}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2519,7 +2553,7 @@ Transform:
   m_GameObject: {fileID: 1973614342}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.75, y: 24.86, z: 0}
+  m_LocalPosition: {x: -13.74, y: 25.02, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -2561,8 +2595,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.18441272, y: 0.06558657}
-  m_Size: {x: 0.7623477, y: 1.9182196}
+  m_Offset: {x: 0.18441272, y: -0.0019426346}
+  m_Size: {x: 0.7623477, y: 2.053278}
   m_Direction: 0
 --- !u!50 &1973614345
 Rigidbody2D:
@@ -2604,26 +2638,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HunchedEnemy
   groundCheckDistance: 0.5
-  wallCheckDistance: 0
+  wallCheckDistance: 2
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
   groundCheck: {fileID: 2143609013}
   primaryWallcheck: {fileID: 1973614343}
-  secondaryWallcheck: {fileID: 1973614343}
+  secondaryWallcheck: {fileID: 0}
   idleTime: 2
   moveSpeed: 1.4
-  player: {fileID: 1273328751}
-  speed: 3
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  initialDetectionRange: 5
-  aggroDetectionRange: 12
-  requireLineOfSight: 1
-  obstacleLayer:
-    serializedVersion: 2
-    m_Bits: 0
+  runAnimSpeedMultiplier: 1.4
 --- !u!1 &2143609012
 GameObject:
   m_ObjectHideFlags: 0
@@ -2681,11 +2705,11 @@ PrefabInstance:
       objectReference: {fileID: 1273328751}
     - target: {fileID: 4887380312878163929, guid: 300a2d26714694f15ab5814509c83cee, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14
+      value: -10.28
       objectReference: {fileID: 0}
     - target: {fileID: 4887380312878163929, guid: 300a2d26714694f15ab5814509c83cee, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 24.6
+      value: 24.48
       objectReference: {fileID: 0}
     - target: {fileID: 4887380312878163929, guid: 300a2d26714694f15ab5814509c83cee, type: 3}
       propertyPath: m_LocalPosition.z
