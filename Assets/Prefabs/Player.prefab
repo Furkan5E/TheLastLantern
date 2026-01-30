@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 280428200248454089}
   - component: {fileID: 968651549362048574}
   - component: {fileID: 1666741862768120874}
-  - component: {fileID: 8168380758122003096}
+  - component: {fileID: 8482437229876553753}
   m_Layer: 0
   m_Name: Animator
   m_TagString: Untagged
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -141406639
-  m_SortingLayer: 1
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 599a38b3693fe4b48a49f4b98dd4f2ca, type: 3}
@@ -115,7 +115,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8168380758122003096
+--- !u!114 &8482437229876553753
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,9 +124,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 246080305471572346}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a62d04a3a0a8e437e895a06f7385486b, type: 3}
+  m_Script: {fileID: 11500000, guid: 739d64cf45c2d4ad3ab64158a8c4eeb6, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Player_AnimationTriggers
+  m_EditorClassIdentifier: Assembly-CSharp::Entity_AnimationTriggers
 --- !u!1 &417957894336421712
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,6 +243,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ca26283a4198ea449289e451eddbc41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
+  groundCheckDistance: 1.51
+  wallCheckDistance: 0.65
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 64
+  groundCheck: {fileID: 6753232042171600780}
+  primaryWallcheck: {fileID: 1974773612155375465}
+  secondaryWallcheck: {fileID: 8367488964600871503}
   attackVelocity:
   - {x: 3, y: 1.5}
   - {x: 1, y: 2.5}
@@ -257,13 +265,6 @@ MonoBehaviour:
   wallSlideSlowMultiplier: 0.7
   dashDuration: 0.25
   dashSpeed: 20
-  groundCheckDistance: 1.51
-  wallCheckDistance: 0.65
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 64
-  primaryWallcheck: {fileID: 1974773612155375465}
-  secondaryWallcheck: {fileID: 8367488964600871503}
   health: 5
   maxHealth: 5
 --- !u!1 &1425145258151311536
