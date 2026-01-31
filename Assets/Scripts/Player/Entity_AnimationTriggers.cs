@@ -8,8 +8,8 @@ public class Entity_AnimationTriggers : MonoBehaviour
         entity = GetComponentInParent<Entity>();
     }
 
-    public void CurrrentStateTrigger()
+    public void CurrentStateAnimationTrigger()
     {
-        entity.CallAnimationTrigger();
+        entity.CurrentStateAnimationTrigger();
     }
 }
