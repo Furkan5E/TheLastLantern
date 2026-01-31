@@ -11,9 +11,13 @@ public class Player_FallState : Player_AiredState
         base.Update();
 
         if(player.groundDetected)
-            stateMachine.ChangeState(player.idleState);
+            stateMachine.ChangeState(player.landingState);
         
         if(player.wallDetected)
             stateMachine.ChangeState(player.wallSlideState);
+        
+        // Transition to fall loop when start animation finishes
+        if(triggerCalled)
+            stateMachine.ChangeState(player.fallLoopState);
     }
 }
