@@ -30,8 +30,12 @@ public class Player_BasicAttackState : PlayerState
         attackDir = player.moveInput.x != 0 ? ((int)player.moveInput.x) : player.facingDir;
 
         anim.SetInteger("basicAttackIndex", comboIndex);
-        ApplyAttackVelocity();
-        Debug.Log($"Attack performed (combo {comboIndex}/{comboLimit})");
+        
+        // Only apply attack velocity for the first attack, not during combos
+        if (comboIndex == FirstComboIndex)
+            ApplyAttackVelocity();
+        else
+            attackVelocityTimer = 0; // Skip attack velocity for combo attacks
     }
 
     public override void Update()
@@ -74,7 +78,11 @@ public class Player_BasicAttackState : PlayerState
         attackVelocityTimer -= Time.deltaTime;
 
         if (attackVelocityTimer < 0)
-            player.SetVelocity(0, rb.linearVelocity.y);
+        {
+            // Allow movement during attack after initial attack velocity
+            float xVelocity = player.moveInput.x * player.moveSpeed;
+            player.SetVelocity(xVelocity, rb.linearVelocity.y);
+        }
     }
 
     private void ApplyAttackVelocity()
