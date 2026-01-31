@@ -10,7 +10,7 @@ public class Enemy_AttackState : EnemyState
     {
         base.Update();
 
-        if(triggerCalled)
-            stateMachine.ChangeState(enemy.idleState);
+        if (triggerCalled)
+            stateMachine.ChangeState(enemy.battleState);
     }
 }
