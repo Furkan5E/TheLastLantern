@@ -80,7 +80,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.375
-    functionName: CurrrentStateTrigger
+    functionName: CurrentStateAnimationTrigger
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
