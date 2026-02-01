@@ -26,6 +26,27 @@ public class Enemy : Entity
     [SerializeField] private Transform playerCheck;
     [SerializeField] private float playerCheckDistance = 10;
 
+    public Transform player { get; private set; }
+
+    public void EnterBattleState(Transform player)
+    {
+        if(stateMachine.currentState == battleState)
+            return;
+
+        if(stateMachine.currentState == attackState)
+            return;
+
+        this.player = player;
+        stateMachine.ChangeState(battleState);
+    }
+
+    public Transform GetPlayer()
+    {
+        if(player == null)
+            player = PlayerDetection().transform;
+
+        return player;
+    }
 
     public RaycastHit2D PlayerDetection()
     {
