@@ -467,6 +467,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy_Health
   maxHp: 5
+--- !u!114 &762832532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762832521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b43f75743a3c6274aa9ff9df5e2dd45b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Entity_VFX
+  onDamageMaterial: {fileID: 2100000, guid: c941db22f9b01954c81621cd65a1741c, type: 2}
+  onDamageVfxDuration: 0.15
 --- !u!1001 &890587211
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -529,6 +543,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 417957894336421712, guid: ad5cac6aa73bced46a59b56dc5f971c6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1792131855}
+    - targetCorrespondingSourceObject: {fileID: 417957894336421712, guid: ad5cac6aa73bced46a59b56dc5f971c6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1792131860}
   m_SourcePrefab: {fileID: 100100000, guid: ad5cac6aa73bced46a59b56dc5f971c6, type: 3}
 --- !u!1 &932438171
 GameObject:
@@ -1214,6 +1231,20 @@ MonoBehaviour:
   whatIsTarget:
     serializedVersion: 2
     m_Bits: 256
+--- !u!114 &1792131860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102974024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b43f75743a3c6274aa9ff9df5e2dd45b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Entity_VFX
+  onDamageMaterial: {fileID: 2100000, guid: c941db22f9b01954c81621cd65a1741c, type: 2}
+  onDamageVfxDuration: 0.15
 --- !u!1 &1932813359
 GameObject:
   m_ObjectHideFlags: 0
@@ -1456,6 +1487,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3835191908894205183, guid: b77a1e64919bd894d90f104372a5cbf1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 762832528}
+    - targetCorrespondingSourceObject: {fileID: 3835191908894205183, guid: b77a1e64919bd894d90f104372a5cbf1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 762832532}
   m_SourcePrefab: {fileID: 100100000, guid: b77a1e64919bd894d90f104372a5cbf1, type: 3}
 --- !u!1001 &1781836043987855487
 PrefabInstance:
@@ -1508,6 +1542,10 @@ PrefabInstance:
     - target: {fileID: 6979261232414772687, guid: 8f3bb7e3865197c43b17bfc8c30e90d3, type: 3}
       propertyPath: m_Name
       value: Save Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6979261232414772687, guid: 8f3bb7e3865197c43b17bfc8c30e90d3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
