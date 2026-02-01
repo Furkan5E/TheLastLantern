@@ -178,6 +178,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entity_Health
   maxHp: 5
+  knockbackPower: {x: 0, y: 0}
+  knockbackDuration: 0
 --- !u!1 &9039675941551616285
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,7 +293,7 @@ SpriteRenderer:
   m_Size: {x: 1.08, y: 2.09}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
 --- !u!114 &1244867152671689007
 MonoBehaviour:

@@ -467,6 +467,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy_Health
   maxHp: 5
+  knockbackPower: {x: 1.5, y: 2.5}
+  knockbackDuration: 0.2
 --- !u!114 &762832532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -492,6 +494,18 @@ PrefabInstance:
     - target: {fileID: 417957894336421712, guid: ad5cac6aa73bced46a59b56dc5f971c6, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3770408055943487644, guid: ad5cac6aa73bced46a59b56dc5f971c6, type: 3}
+      propertyPath: knockbackPower.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3770408055943487644, guid: ad5cac6aa73bced46a59b56dc5f971c6, type: 3}
+      propertyPath: knockbackPower.y
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3770408055943487644, guid: ad5cac6aa73bced46a59b56dc5f971c6, type: 3}
+      propertyPath: knockbackDuration
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6753232042171600780, guid: ad5cac6aa73bced46a59b56dc5f971c6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1429,6 +1443,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 607398848653898166, guid: b77a1e64919bd894d90f104372a5cbf1, type: 3}
+      propertyPath: m_Size.x
+      value: 2.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 607398848653898166, guid: b77a1e64919bd894d90f104372a5cbf1, type: 3}
+      propertyPath: m_Size.y
+      value: 2.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 607398848653898166, guid: b77a1e64919bd894d90f104372a5cbf1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 25de2ac4abd484796ab791cdb166286c, type: 3}
+    - target: {fileID: 607398848653898166, guid: b77a1e64919bd894d90f104372a5cbf1, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3835191908894205183, guid: b77a1e64919bd894d90f104372a5cbf1, type: 3}
       propertyPath: m_Name
       value: HunchedEnemy
