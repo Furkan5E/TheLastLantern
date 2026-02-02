@@ -11,8 +11,6 @@ public class Player : Entity
     public Player_MoveState moveState { get; private set; }
     public Player_JumpState jumpState { get; private set; }
     public Player_FallState fallState { get; private set; }
-    public Player_FallLoopState fallLoopState { get; private set; }
-    public Player_LandingState landingState { get; private set; }
     public Player_WallSlideState wallSlideState { get; private set; }
     public Player_BasicAttackState basicAttackState { get; private set; }
     public Player_JumpAttackState jumpAttackState { get; private set; }
@@ -59,8 +57,6 @@ public class Player : Entity
         moveState = new Player_MoveState(this, stateMachine, "move");
         jumpState = new Player_JumpState(this, stateMachine, "jumpFall");
         fallState = new Player_FallState(this, stateMachine, "jumpFall");
-        fallLoopState = new Player_FallLoopState(this, stateMachine, "fallLoop");
-        landingState = new Player_LandingState(this, stateMachine, "landing");
         wallSlideState = new Player_WallSlideState(this, stateMachine, "wallSlide");
         basicAttackState = new Player_BasicAttackState(this, stateMachine, "basicAttack");
         jumpAttackState = new Player_JumpAttackState(this, stateMachine, "jumpAttack");
