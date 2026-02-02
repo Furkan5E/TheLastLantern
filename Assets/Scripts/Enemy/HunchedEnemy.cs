@@ -9,6 +9,7 @@ public class HunchedEnemy : Enemy
         moveState = new Enemy_MoveState(this, stateMachine, "run");
         attackState = new Enemy_AttackState(this, stateMachine, "attack");
         battleState = new Enemy_BattleState(this, stateMachine, "battle");
+        deadState = new Enemy_DeadState(this, stateMachine, "idle");
     }
 
     protected override void Start()

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e1520c2850ee445798b1b4adb1888a36
+guid: 25de2ac4abd484796ab791cdb166286c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -216806910591676023
-    second: shadow_idle2_0
+      213: -6841874927547822690
+    second: shadow_idle1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: shadow_idle2_0
+      name: shadow_idle1_0
       rect:
         serializedVersion: 2
-        x: 31
-        y: 5
-        width: 107
-        height: 218
+        x: 32
+        y: 7
+        width: 108
+        height: 209
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9815555734fbdfcf0800000000000000
-      internalID: -216806910591676023
+      spriteID: e9d4cd1d007cc01a0800000000000000
+      internalID: -6841874927547822690
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      shadow_idle2_0: -216806910591676023
+      shadow_idle1_0: -6841874927547822690
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
