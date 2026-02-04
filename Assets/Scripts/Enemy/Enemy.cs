@@ -19,6 +19,7 @@ public class Enemy : Entity
     [Header("Stunned state details")]
     public float stunnedDuration = 1;
     public Vector2 stunnnedVelocity = new Vector2(7,7);
+    protected bool canBeStunned;
 
     [Header("Movement Details")]
     public float idleTime = 2;
@@ -32,6 +33,8 @@ public class Enemy : Entity
     [SerializeField] private float playerCheckDistance = 10;
 
     public Transform player { get; private set; }
+
+    public void EnableCounterWindow(bool enable) => canBeStunned = enable;
 
     public override void EntityDeath()
     {

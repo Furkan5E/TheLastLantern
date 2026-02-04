@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class HunchedEnemy : Enemy
+public class HunchedEnemy : Enemy, ICounterable
 {
     protected override void Awake()
     {
@@ -17,5 +17,13 @@ public class HunchedEnemy : Enemy
     {
         base.Start();
         stateMachine.Initialize(idleState);
+    }
+
+    public void HandleCounter()
+    {
+        if(canBeStunned == false)
+            return;
+            
+        stateMachine.ChangeState(stunnedState);
     }
 }
