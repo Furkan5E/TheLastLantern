@@ -3,34 +3,35 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
+using UnityEngine.UI;
 
 public class Dialogue : MonoBehaviour
 {
     [Header("UI")]
     public TextMeshProUGUI textComponent;
+    public TextMeshProUGUI speakerComponent;
 
     [Header("Dialogue Settings")]
     public float textSpeed = 0.05f;
-    public string dialogueId;
+
+    private string dialogueId;
 
     [Header("Data")]
     public TextAsset dialogueJson;
 
     private string[] lines;
+    private string[] speakers;
     private int index;
+    private bool hasStarted;
 
     void Start()
     {
-        LoadDialogue(dialogueId);
+        hasStarted = true;
+    }
 
-        if (lines == null || lines.Length == 0)
-        {
-            Debug.LogError("No dialogue lines loaded.");
-            return;
-        }
-
-        textComponent.text = string.Empty;
-        StartDialogue();
+    public void SetDialogueId(string id)
+    {
+        dialogueId = id;
     }
 
     void Update()
@@ -79,9 +80,11 @@ public class Dialogue : MonoBehaviour
         }
 
         lines = new string[dialogue.lines.Length];
+        speakers = new string[dialogue.lines.Length];
         for (int i = 0; i < dialogue.lines.Length; i++)
         {
             lines[i] = dialogue.lines[i].text;
+            speakers[i] = dialogue.lines[i].speaker;
         }
     }
 
@@ -93,6 +96,7 @@ public class Dialogue : MonoBehaviour
 
     IEnumerator TypeLine()
     {
+        speakerComponent.text = speakers[index];
         foreach (char c in lines[index])
         {
             textComponent.text += c;
@@ -116,8 +120,16 @@ public class Dialogue : MonoBehaviour
 
     void OnEnable()
     {
-        if (lines == null || lines.Length == 0)
+        if (string.IsNullOrEmpty(dialogueId))
             return;
+
+        LoadDialogue(dialogueId);
+
+        if (lines == null || lines.Length == 0)
+        {
+            Debug.LogError("No dialogue lines loaded.");
+            return;
+        }
 
         StopAllCoroutines();
         index = 0;

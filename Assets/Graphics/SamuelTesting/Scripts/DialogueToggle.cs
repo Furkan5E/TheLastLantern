@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class DialogueToggle : MonoBehaviour
 {
     [SerializeField] private GameObject dialogueObject;
+    [SerializeField] private string dialogueId;
     private bool playerInRange;
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -28,6 +29,11 @@ public class DialogueToggle : MonoBehaviour
 
         if (Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame)
         {
+            Dialogue dialogue = dialogueObject.GetComponent<Dialogue>();
+            if (dialogue != null)
+            {
+                dialogue.SetDialogueId(dialogueId);
+            }
             dialogueObject.SetActive(true);
         }
     }
