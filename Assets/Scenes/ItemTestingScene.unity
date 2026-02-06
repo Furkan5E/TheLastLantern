@@ -986,6 +986,8 @@ GameObject:
   - component: {fileID: 636287406}
   - component: {fileID: 636287405}
   - component: {fileID: 636287404}
+  - component: {fileID: 636287408}
+  - component: {fileID: 636287409}
   m_Layer: 8
   m_Name: Burden
   m_TagString: Untagged
@@ -1095,8 +1097,38 @@ Transform:
   m_Children:
   - {fileID: 181543858}
   - {fileID: 2072030959}
+  - {fileID: 722337271}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &636287408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636287403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55e5a933f77385044900b5205dd8b58f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Entity_Health
+  maxHp: 5
+  knockbackPower: {x: 1.5, y: 2.5}
+  knockbackDuration: 0.2
+--- !u!114 &636287409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636287403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b43f75743a3c6274aa9ff9df5e2dd45b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Entity_VFX
+  onDamageMaterial: {fileID: 2100000, guid: c941db22f9b01954c81621cd65a1741c, type: 2}
+  onDamageVfxDuration: 0.15
 --- !u!1 &654273070 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 246080305471572346, guid: ad5cac6aa73bced46a59b56dc5f971c6, type: 3}
@@ -1114,6 +1146,88 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 739d64cf45c2d4ad3ab64158a8c4eeb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Entity_AnimationTriggers
+--- !u!1 &722337270
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 722337271}
+  - component: {fileID: 722337273}
+  - component: {fileID: 722337272}
+  m_Layer: 9
+  m_Name: DamageTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &722337271
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 722337270}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 636287407}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &722337272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 722337270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6851453cee761401e8d9c9db3cc81c77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Burden_DamageTrigger
+--- !u!70 &722337273
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 722337270}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.0019001772, y: 0.1603867}
+  m_Size: {x: 1.713315, y: 0.9415934}
+  m_Direction: 1
 --- !u!1 &807755814
 GameObject:
   m_ObjectHideFlags: 0

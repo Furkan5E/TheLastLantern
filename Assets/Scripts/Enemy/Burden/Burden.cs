@@ -3,6 +3,7 @@ using UnityEngine;
 public class Burden : Entity
 {
     public Burden_WalkState walkState;
+    public Burden_DeadState deadState;
 
     [Header("Movement Details")]
     public float moveSpeed = 1.2f;
@@ -19,7 +20,7 @@ public class Burden : Entity
         base.Awake();
         
         walkState = new Burden_WalkState(this, stateMachine, "burdenMove");
-        
+        deadState = new Burden_DeadState(this, stateMachine, "burdenMove");
     }
 
     protected override void Start()
@@ -55,5 +56,12 @@ public class Burden : Entity
             playerHealth.TakeDamage(contactDamage, transform);
             lastContactDamageTime = Time.time;
         }
+    }
+
+    public override void EntityDeath()
+    {
+        base.EntityDeath();
+        stateMachine.ChangeState(deadState);
+        isDead = true;
     }
 }

@@ -13,26 +13,19 @@ public class Burden_DeadState : EntityState
 
     public override void Enter()
     {
-        base.Enter();
+        // Disable animator and collider
+        if (anim != null)
+            anim.enabled = false;
+        
+        Collider2D col = burden.GetComponent<Collider2D>();
+        if (col != null)
+            col.enabled = false;
 
-        // Stop all movement
-        rb.linearVelocity = Vector2.zero;
-        rb.gravityScale = 0;
+        // Jump up and fall off platform (same as HunchedEnemy)
+        rb.gravityScale = 12;
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, 23);
 
-        // Optionally disable collider to prevent further interactions
-        burden.GetComponent<Collider2D>().enabled = false;
-    }
-
-    public override void Update()
-    {
-        base.Update();
-
-        // Could add fade out logic here if needed
-        // For now, just keep the entity stopped
-    }
-
-    public override void Exit()
-    {
-        base.Exit();
+        // Turn off state machine
+        stateMachine.SwitchOffStateMachine();
     }
 }
