@@ -216,7 +216,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: playerJumpAttack_start
+  m_Name: playerJumpAttack
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -277,7 +277,7 @@ AnimatorStateMachine:
     m_Position: {x: 240, y: 100, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3164693116910004622}
-    m_Position: {x: 620, y: 250, z: 0}
+    m_Position: {x: 630, y: 240, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5162307763731274038}
     m_Position: {x: 240, y: 250, z: 0}
@@ -290,7 +290,7 @@ AnimatorStateMachine:
   m_ChildStateMachines:
   - serializedVersion: 1
     m_StateMachine: {fileID: 8379428601295113742}
-    m_Position: {x: -210, y: 380, z: 0}
+    m_Position: {x: -210, y: 250, z: 0}
   m_AnyStateTransitions: []
   m_EntryTransitions:
   - {fileID: -7892412128443829666}
@@ -304,7 +304,7 @@ AnimatorStateMachine:
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: -190, y: -40, z: 0}
   m_EntryPosition: {x: -190, y: 110, z: 0}
-  m_ExitPosition: {x: 640, y: 80, z: 0}
+  m_ExitPosition: {x: 650, y: 110, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 6580186211829158503}
 --- !u!1101 &-2305261991050670951
@@ -733,7 +733,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: playerJumpAttack_end
+  m_Name: playerJumpAttack_performed
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:

@@ -21,9 +21,7 @@ public class HunchedEnemy : Enemy, ICounterable
 
     public void HandleCounter()
     {
-        if(canBeStunned == false)
-            return;
-            
-        stateMachine.ChangeState(stunnedState);
+        if(stateMachine.currentState == attackState)
+            stateMachine.ChangeState(stunnedState);
     }
 }

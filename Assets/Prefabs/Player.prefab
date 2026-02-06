@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 280428200248454089}
   - component: {fileID: 968651549362048574}
   - component: {fileID: 1666741862768120874}
-  - component: {fileID: 8482437229876553753}
+  - component: {fileID: 7569415236235927151}
   m_Layer: 0
   m_Name: Animator
   m_TagString: Untagged
@@ -115,7 +115,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8482437229876553753
+--- !u!114 &7569415236235927151
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,9 +124,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 246080305471572346}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 739d64cf45c2d4ad3ab64158a8c4eeb6, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c2e0bdf35fd6a94c8a8a06f689711d9, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Entity_AnimationTriggers
+  m_EditorClassIdentifier: Assembly-CSharp::Player_AnimationTriggers
 --- !u!1 &417957894336421712
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,8 +140,8 @@ GameObject:
   - component: {fileID: 2047527601697831791}
   - component: {fileID: 1220272573849419995}
   - component: {fileID: 3770408055943487644}
-  - component: {fileID: 8656613259670574283}
   - component: {fileID: 8984186007776104919}
+  - component: {fileID: 2390521200929575995}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -265,7 +265,7 @@ MonoBehaviour:
   comboResetTime: 1
   moveSpeed: 8
   jumpForce: 14
-  wallJumpForce: {x: 6, y: 12}
+  wallJumpForce: {x: 7, y: 13}
   inAirMoveMultiplier: 0.7
   wallSlideSlowMultiplier: 0.7
   dashDuration: 0.25
@@ -288,24 +288,6 @@ MonoBehaviour:
   maxHp: 5
   knockbackPower: {x: 1.5, y: 2.5}
   knockbackDuration: 0.2
---- !u!114 &8656613259670574283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 417957894336421712}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e58a2ebf0bc4452190f79d910269472, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Entity_Combat
-  damage: 1
-  targetCheck: {fileID: 2664026476733143891}
-  targetCheckRadius: 1
-  whatIsTarget:
-    serializedVersion: 2
-    m_Bits: 256
 --- !u!114 &8984186007776104919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,6 +302,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Entity_VFX
   onDamageMaterial: {fileID: 2100000, guid: c941db22f9b01954c81621cd65a1741c, type: 2}
   onDamageVfxDuration: 0.15
+--- !u!114 &2390521200929575995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 417957894336421712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b46815d17798a44e910452947cfb213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Player_Combat
+  damage: 1
+  targetCheck: {fileID: 2664026476733143891}
+  targetCheckRadius: 1
+  whatIsTarget:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &1425145258151311536
 GameObject:
   m_ObjectHideFlags: 0

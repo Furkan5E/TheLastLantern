@@ -4,7 +4,8 @@ public class Entity_AnimationTriggers : MonoBehaviour
 {
     private Entity entity;
     private Entity_Combat entityCombat;
-    private void Awake()
+    
+    protected virtual void Awake()
     {
         entity = GetComponentInParent<Entity>();
         entityCombat = GetComponentInParent<Entity_Combat>();
@@ -15,7 +16,7 @@ public class Entity_AnimationTriggers : MonoBehaviour
         entity.CurrentStateAnimationTrigger();
     }
 
-    private void AttackTrigger()
+    protected virtual void AttackTrigger()
     {
         entityCombat.PerformAttack();
     }
