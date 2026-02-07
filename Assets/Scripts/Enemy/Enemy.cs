@@ -7,6 +7,7 @@ public class Enemy : Entity
     public Enemy_AttackState attackState;
     public Enemy_BattleState battleState;
     public Enemy_DeadState deadState;
+    public Enemy_StunnedState stunnedState;
 
     [Header("Battle Details")]
     public float battleMoveSpeed = 3;
@@ -15,12 +16,15 @@ public class Enemy : Entity
     public float minRetreatDistance = 1;
     public Vector2 retreatVelocity;
 
+    [Header("Stunned state details")]
+    public float stunnedDuration = 0.8f;
+    public Vector2 stunnnedVelocity = new Vector2(7,7);
+
     [Header("Movement Details")]
     public float idleTime = 2;
     public float moveSpeed = 1.4f;
     [Range(0, 2)]
     public float runAnimSpeedMultiplier = 1.4f;
-
 
     [Header("Player Detection")]
     [SerializeField] private LayerMask whatIsPlayer;

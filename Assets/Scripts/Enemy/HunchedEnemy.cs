@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class HunchedEnemy : Enemy
+public class HunchedEnemy : Enemy, ICounterable
 {
     protected override void Awake()
     {
@@ -10,11 +10,18 @@ public class HunchedEnemy : Enemy
         attackState = new Enemy_AttackState(this, stateMachine, "attack");
         battleState = new Enemy_BattleState(this, stateMachine, "battle");
         deadState = new Enemy_DeadState(this, stateMachine, "idle");
+        stunnedState = new Enemy_StunnedState(this, stateMachine, "idle");
     }
 
     protected override void Start()
     {
         base.Start();
         stateMachine.Initialize(idleState);
+    }
+
+    public void HandleCounter()
+    {
+        if(stateMachine.currentState == attackState)
+            stateMachine.ChangeState(stunnedState);
     }
 }
