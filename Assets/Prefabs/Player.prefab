@@ -302,6 +302,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Entity_VFX
   onDamageMaterial: {fileID: 2100000, guid: c941db22f9b01954c81621cd65a1741c, type: 2}
   onDamageVfxDuration: 0.15
+  hitVfxColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  hitVfx: {fileID: 990671474936042315, guid: e3effc53bea892d41b2e0f1ae93e4870, type: 3}
 --- !u!114 &2390521200929575995
 MonoBehaviour:
   m_ObjectHideFlags: 0

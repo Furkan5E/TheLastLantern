@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Entity_Combat : MonoBehaviour
 {
-
+    private Entity_VFX vfx;
     public float damage = 1;
 
     [Header("Target Detection")]
@@ -10,12 +10,21 @@ public class Entity_Combat : MonoBehaviour
     [SerializeField] private float targetCheckRadius = 1;
     [SerializeField] private LayerMask whatIsTarget;
 
+    private void Awake()
+    {
+        vfx = GetComponent<Entity_VFX>();
+    }
+
     public void PerformAttack()
     {
         foreach (var target in GetDetectedColliders())
         {
             IDamageable damageable = target.GetComponent<IDamageable>();
-            damageable?.TakeDamage(damage, transform);
+            if(damageable == null)
+                continue; //skip target
+
+            damageable.TakeDamage(damage, transform);
+            vfx.CreateOnHitVfx(target.transform);
         }
     }
 
