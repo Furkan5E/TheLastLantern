@@ -266,7 +266,9 @@ MonoBehaviour:
   moveSpeed: 8
   jumpForce: 14
   wallJumpForce: {x: 7, y: 13}
-  inAirMoveMultiplier: 0.7
+  coyoteTime: 0.1
+  coyoteTimeCounter: 0
+  inAirMoveMultiplier: 1
   jumpCutMultiplier: 0.5
   wallSlideSlowMultiplier: 0.7
   dashDuration: 0.25

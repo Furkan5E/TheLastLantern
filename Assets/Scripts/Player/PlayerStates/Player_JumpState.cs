@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Player_JumpState : Player_AiredState
 {
-    private bool jumpCut; // Track if jump was cut short
+    private bool jumpCut;
     
     public Player_JumpState(Player player, StateMachine stateMachine, string animBoolName) : base(player, stateMachine, animBoolName)
     {
@@ -14,12 +14,12 @@ public class Player_JumpState : Player_AiredState
         jumpCut = false;
         rb.gravityScale = 2.6f;
         player.SetVelocity(rb.linearVelocity.x, player.jumpForce);
+        player.coyoteTimeCounter = 0f;
     }
     
     public override void Update()
     {
         base.Update();
-        
         
         if (input.Player.Jump.WasReleasedThisFrame() && rb.linearVelocity.y > 0 && !jumpCut)
         {
