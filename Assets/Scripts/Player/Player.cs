@@ -29,9 +29,14 @@ public class Player : Entity
     public float moveSpeed;
     public float jumpForce = 5f;
     public Vector2 wallJumpForce;
+    
+    public float coyoteTime = 0.1f;
+    public float coyoteTimeCounter;
 
     [Range(0, 1)]
     public float inAirMoveMultiplier = 0.7f;
+    [Range(0, 1)]
+    public float jumpCutMultiplier = 0.5f;
     [Range(0, 1)]
     public float wallSlideSlowMultiplier = 0.7f;
     [Space]
