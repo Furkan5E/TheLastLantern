@@ -271,6 +271,8 @@ MonoBehaviour:
   inAirMoveMultiplier: 1
   jumpCutMultiplier: 0.5
   wallSlideSlowMultiplier: 0.7
+  dashCooldown: 0.8
+  dashCooldownTimer: 0
   dashDuration: 0.25
   dashSpeed: 20
   health: 5

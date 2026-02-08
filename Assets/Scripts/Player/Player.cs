@@ -39,11 +39,13 @@ public class Player : Entity
     public float jumpCutMultiplier = 0.5f;
     [Range(0, 1)]
     public float wallSlideSlowMultiplier = 0.7f;
-    [Space]
-    public float dashDuration = 0.25f;
-    public float dashSpeed = 20;
     public Vector2 moveInput { get; private set; }
 
+    [Header("Dashing")]
+    public float dashCooldown = 1f;
+    public float dashCooldownTimer;
+    public float dashDuration = 0.25f;
+    public float dashSpeed = 20;
 
     [Header("Health")]
     public int health = 5;
