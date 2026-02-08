@@ -6,6 +6,12 @@ public class Player_FallState : Player_AiredState
     {
     }
 
+    public override void Enter()
+    {
+        base.Enter();
+        rb.gravityScale = 3.8f; //faster fall
+    }
+
     public override void Update()
     {
         base.Update();

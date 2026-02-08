@@ -251,7 +251,7 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
-  groundCheckDistance: 1.51
+  groundCheckDistance: 1.55
   wallCheckDistance: 0.65
   groundCheck: {fileID: 6753232042171600780}
   primaryWallcheck: {fileID: 1974773612155375465}
@@ -267,6 +267,7 @@ MonoBehaviour:
   jumpForce: 14
   wallJumpForce: {x: 7, y: 13}
   inAirMoveMultiplier: 0.7
+  jumpCutMultiplier: 0.5
   wallSlideSlowMultiplier: 0.7
   dashDuration: 0.25
   dashSpeed: 20

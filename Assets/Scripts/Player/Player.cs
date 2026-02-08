@@ -33,6 +33,8 @@ public class Player : Entity
     [Range(0, 1)]
     public float inAirMoveMultiplier = 0.7f;
     [Range(0, 1)]
+    public float jumpCutMultiplier = 0.5f;
+    [Range(0, 1)]
     public float wallSlideSlowMultiplier = 0.7f;
     [Space]
     public float dashDuration = 0.25f;
