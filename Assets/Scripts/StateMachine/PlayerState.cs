@@ -4,8 +4,6 @@ public abstract class PlayerState : EntityState
 {
     protected Player player;
     protected PlayerInputSet input;
-
-
     
     public PlayerState(Player player, StateMachine stateMachine, string animBoolName) : base(stateMachine, animBoolName)
     {
@@ -16,11 +14,12 @@ public abstract class PlayerState : EntityState
         input = player.input;
     }
 
-
-
     public override void Update()
     {
         base.Update();
+
+        if (player.dashCooldown > 0)
+            player.dashCooldownTimer -= Time.deltaTime;
 
         if(input.Player.Dash.WasPressedThisFrame() && CanDash())
             stateMachine.ChangeState(player.dashState);
@@ -38,6 +37,9 @@ public abstract class PlayerState : EntityState
             return false;
 
         if(stateMachine.currentState == player.dashState)
+            return false;
+
+        if(player.dashCooldownTimer > 0)
             return false;
 
         return true; 
