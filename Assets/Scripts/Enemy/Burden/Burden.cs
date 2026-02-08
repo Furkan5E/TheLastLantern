@@ -15,10 +15,15 @@ public class Burden : Entity
 
     public bool isDead { get; private set; }
 
+    [Header("Edge Detection")]
+    public GameObject[] wayPoints;
+    public int nextPoint;
+    public float distToPoint;
+
     protected override void Awake()
     {
         base.Awake();
-        
+
         walkState = new Burden_WalkState(this, stateMachine, "burdenMove");
         deadState = new Burden_DeadState(this, stateMachine, "burdenMove");
     }
@@ -29,6 +34,40 @@ public class Burden : Entity
         stateMachine.Initialize(walkState);
     }
 
+    protected override void Update()
+    {
+        // Don't call base.Update() - we handle state machine manually
+        // This skips HandleCollisionDetection() from Entity base class
+        stateMachine.UpdateActiveState();
+    }
+
+    public void Move()
+    {
+        distToPoint = Vector2.Distance(transform.position, wayPoints[nextPoint].transform.position);
+        transform.position = Vector2.MoveTowards(transform.position, wayPoints[nextPoint].transform.position, moveSpeed * Time.deltaTime);
+        if (distToPoint < 0.2f)
+        {
+            TakeTurn();
+        }
+    }
+
+    private void TakeTurn()
+    {
+        Vector3 currRotation = transform.eulerAngles;
+        currRotation.z += wayPoints[nextPoint].transform.eulerAngles.z;
+        transform.eulerAngles = currRotation;
+        ChooseNextPoint();
+    }
+
+    private void ChooseNextPoint()
+    {
+        nextPoint++;
+
+        if (nextPoint == wayPoints.Length)
+        {
+            nextPoint = 0;
+        }
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -65,3 +104,4 @@ public class Burden : Entity
         isDead = true;
     }
 }
+
