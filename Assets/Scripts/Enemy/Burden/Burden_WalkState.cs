@@ -13,14 +13,10 @@ public class Burden_WalkState : EntityState
 
     public override void Update()
     {
-        base.Update();
+        // base.Update();
 
-        // Check for edges/walls and flip
-        if (burden.groundDetected == false || burden.wallDetected)
-            burden.Flip();
-
-        // Move horizontally
-        burden.SetVelocity(burden.moveSpeed * burden.facingDir, rb.linearVelocity.y);
+        // Use the new waypoint-based movement system
+        burden.Move();
     }
 
 }

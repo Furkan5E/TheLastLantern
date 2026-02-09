@@ -21,7 +21,8 @@ public class Burden_DeadState : EntityState
         if (col != null)
             col.enabled = false;
 
-        // Jump up and fall off platform (same as HunchedEnemy)
+        // Switch to Dynamic so physics works for the death animation
+        rb.bodyType = RigidbodyType2D.Dynamic;
         rb.gravityScale = 12;
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, 23);
 
