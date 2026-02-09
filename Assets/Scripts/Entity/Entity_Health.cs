@@ -5,8 +5,8 @@ public class Entity_Health : MonoBehaviour
 {
     private Entity entity;
     private Entity_VFX entityVfx;
-
     [SerializeField] protected float maxHp = 5;
+    public float currentHp { get; private set; }
     protected bool isDead;
 
     [Header("On Damage Knockback")]
@@ -15,6 +15,7 @@ public class Entity_Health : MonoBehaviour
     
     protected virtual void Awake()
     {
+        currentHp = maxHp;
         entity = GetComponent<Entity>();
         entityVfx = GetComponent<Entity_VFX>();
     }
@@ -36,9 +37,9 @@ public class Entity_Health : MonoBehaviour
 
     protected void ReduceHp(float damage)
     {
-        maxHp -= damage;
+        currentHp -= damage;
 
-        if(maxHp < 0)
+        if(currentHp < 0)
             Die();
     }
 
