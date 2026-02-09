@@ -1056,6 +1056,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Entity_VFX
   onDamageMaterial: {fileID: 2100000, guid: c941db22f9b01954c81621cd65a1741c, type: 2}
   onDamageVfxDuration: 0.15
+  hitVfxColor: {r: 1, g: 1, b: 1, a: 1}
+  hitVfx: {fileID: 0}
 --- !u!1 &722337270
 GameObject:
   m_ObjectHideFlags: 0
@@ -2763,17 +2765,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 607398848653898166, guid: b77a1e64919bd894d90f104372a5cbf1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -9020359781391833327, guid: 880ddaa7eea9d4ad58158b20036e01cc, type: 3}
+    - target: {fileID: 1976058248082253054, guid: b77a1e64919bd894d90f104372a5cbf1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.821
+      objectReference: {fileID: 0}
+    - target: {fileID: 1976058248082253054, guid: b77a1e64919bd894d90f104372a5cbf1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.025
+      objectReference: {fileID: 0}
     - target: {fileID: 3835191908894205183, guid: b77a1e64919bd894d90f104372a5cbf1, type: 3}
       propertyPath: m_Name
-      value: HunchedEnemy
+      value: The Drifter
       objectReference: {fileID: 0}
     - target: {fileID: 4895875094893659344, guid: b77a1e64919bd894d90f104372a5cbf1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.54203
+      value: 12.52
       objectReference: {fileID: 0}
     - target: {fileID: 4895875094893659344, guid: b77a1e64919bd894d90f104372a5cbf1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 25.110228
+      value: 25.31
       objectReference: {fileID: 0}
     - target: {fileID: 4895875094893659344, guid: b77a1e64919bd894d90f104372a5cbf1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2809,11 +2823,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6181298908982419684, guid: b77a1e64919bd894d90f104372a5cbf1, type: 3}
       propertyPath: m_Size.x
-      value: 1.03339
+      value: 0.73915005
+      objectReference: {fileID: 0}
+    - target: {fileID: 6181298908982419684, guid: b77a1e64919bd894d90f104372a5cbf1, type: 3}
+      propertyPath: m_Size.y
+      value: 2.4916353
       objectReference: {fileID: 0}
     - target: {fileID: 6181298908982419684, guid: b77a1e64919bd894d90f104372a5cbf1, type: 3}
       propertyPath: m_Offset.x
-      value: 0.048891544
+      value: 0.03988409
+      objectReference: {fileID: 0}
+    - target: {fileID: 6181298908982419684, guid: b77a1e64919bd894d90f104372a5cbf1, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.052984715
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259121945852258833, guid: b77a1e64919bd894d90f104372a5cbf1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.034
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
