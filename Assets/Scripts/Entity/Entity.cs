@@ -17,7 +17,7 @@ public class Entity : MonoBehaviour
     [SerializeField] protected LayerMask whatIsGround;
     [SerializeField] private float groundCheckDistance;
     [SerializeField] private float wallCheckDistance;
-    [SerializeField] private Transform groundCheck;
+    [SerializeField] protected Transform groundCheck;
     [SerializeField] private Transform primaryWallcheck;
     [SerializeField] private Transform secondaryWallcheck;
     public bool groundDetected { get; private set; }
@@ -98,7 +98,7 @@ public class Entity : MonoBehaviour
     }
 
     private void HandleCollisionDetection()
-    {
+    {   
         groundDetected = Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, whatIsGround);
 
         if (secondaryWallcheck != null)
