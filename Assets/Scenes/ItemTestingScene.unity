@@ -2777,6 +2777,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.025
       objectReference: {fileID: 0}
+    - target: {fileID: 3683150350280413127, guid: b77a1e64919bd894d90f104372a5cbf1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.18
+      objectReference: {fileID: 0}
     - target: {fileID: 3835191908894205183, guid: b77a1e64919bd894d90f104372a5cbf1, type: 3}
       propertyPath: m_Name
       value: The Drifter
@@ -2836,6 +2840,10 @@ PrefabInstance:
     - target: {fileID: 6181298908982419684, guid: b77a1e64919bd894d90f104372a5cbf1, type: 3}
       propertyPath: m_Offset.y
       value: -0.052984715
+      objectReference: {fileID: 0}
+    - target: {fileID: 7539742677068557683, guid: b77a1e64919bd894d90f104372a5cbf1, type: 3}
+      propertyPath: moveSpeed
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8259121945852258833, guid: b77a1e64919bd894d90f104372a5cbf1, type: 3}
       propertyPath: m_LocalPosition.x
