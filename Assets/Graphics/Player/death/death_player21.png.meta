@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e1ecfe787df063e499c14691a9dfc0f9
+guid: b79ad9e38af1c4a3e8476c7eff8be667
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8949893579457432881
-    second: player_deathTemp_0
+      213: 1073819331320328946
+    second: death_player21_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: player_deathTemp_0
+      name: death_player21_0
       rect:
         serializedVersion: 2
-        x: 31
-        y: 0
-        width: 186
-        height: 144
+        x: 55
+        y: 1
+        width: 86
+        height: 54
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 13d0c1dbac8643c70800000000000000
-      internalID: 8949893579457432881
+      spriteID: 2f2bb441ef8f6ee00800000000000000
+      internalID: 1073819331320328946
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      player_deathTemp_0: 8949893579457432881
+      death_player21_0: 1073819331320328946
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
