@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class Player : Entity
@@ -16,7 +17,11 @@ public class Player : Entity
     public Player_JumpAttackState jumpAttackState { get; private set; }
     public Player_WallJumpState wallJumpState { get; private set; }
     public Player_DashState dashState { get; private set; }
-    public Player_DeadState deadState { get; private set; } 
+    public Player_DeadState deadState { get; private set; }
+
+    [Header("Collision Details")]
+    //this is used to determine if the player is grounded or touching a wall, and is set in the inspector
+    public CurrencyManager cm;
 
     [Header("Attack Details")]
     public Vector2[] attackVelocity;
@@ -95,6 +100,16 @@ public class Player : Entity
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+
+         if (other.gameObject.CompareTag("FireFlies"))
+        {
+            //access the coin manager and increase the coin count, then destroy the coin
+            Destroy(other.gameObject);
+            //increase the coin count in the coin manager
+            cm.fireflies++;  
+        }
+
+
         Item item = other.gameObject.GetComponent<Item>();
         if (item == null)
         {
