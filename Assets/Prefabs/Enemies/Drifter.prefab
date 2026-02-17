@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 4386222517000343292}
   - component: {fileID: 8271446652268286558}
   m_Layer: 8
-  m_Name: HunchedEnemy
+  m_Name: Drifter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,7 +63,7 @@ Transform:
   m_GameObject: {fileID: 3835191908894205183}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.28, y: -1.8627834, z: 0}
+  m_LocalPosition: {x: 9.28, y: -1.64, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -168,8 +168,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.18441272, y: -0.0019426346}
-  m_Size: {x: 0.7623477, y: 2.053278}
+  m_Offset: {x: 0.19573903, y: 0.028045058}
+  m_Size: {x: 0.7396951, y: 2.4312513}
   m_Direction: 0
 --- !u!114 &6194862084195369654
 MonoBehaviour:
@@ -408,7 +408,7 @@ SpriteRenderer:
   m_SortingLayer: -2
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 25de2ac4abd484796ab791cdb166286c, type: 3}
+  m_Sprite: {fileID: -9020359781391833327, guid: 880ddaa7eea9d4ad58158b20036e01cc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
