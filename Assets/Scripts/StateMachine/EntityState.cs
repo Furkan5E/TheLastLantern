@@ -31,6 +31,10 @@ public abstract class EntityState
         UpdateAnimationParameters();
     }
 
+    public virtual void PhysicsUpdate()
+    {
+    }
+
     public virtual void Exit()
     {
         anim.SetBool(animBoolName, false);
@@ -40,6 +44,7 @@ public abstract class EntityState
     {
         triggerCalled = true;
     }
+    
     public virtual void UpdateAnimationParameters()
     {
     }

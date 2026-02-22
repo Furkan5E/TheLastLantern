@@ -15,20 +15,17 @@ public class Player_DashState : PlayerState
 
         player.dashCooldownTimer = player.dashCooldown;
 
-        dashDir = player.moveInput.x != 0 ? ((int)player.moveInput.x) : player.facingDir;
+        dashDir = player.moveInput.x != 0 ? (int)Mathf.Sign(player.moveInput.x) : player.facingDir;
         stateTimer = player.dashDuration;
 
         originalGravityScale = rb.gravityScale;
         rb.gravityScale = 0;
     }
 
-
     public override void Update()
     {
         base.Update();
         CancelDashIfNeeded();
-        player.SetVelocity(player.dashSpeed * dashDir, 0);
-
 
         if (stateTimer < 0)
         {
@@ -37,6 +34,12 @@ public class Player_DashState : PlayerState
             else
                 stateMachine.ChangeState(player.fallState);
         }
+    }
+
+    public override void PhysicsUpdate()
+    {
+        base.PhysicsUpdate();
+        player.SetVelocity(player.dashSpeed * dashDir, 0);
     }
 
     public override void Exit()

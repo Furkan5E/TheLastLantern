@@ -12,7 +12,6 @@ public class Player_JumpState : Player_AiredState
     {
         base.Enter();
         jumpCut = false;
-        rb.gravityScale = 2.6f;
         player.SetVelocity(rb.linearVelocity.x, player.jumpForce);
         player.coyoteTimeCounter = 0f;
     }
@@ -24,10 +23,24 @@ public class Player_JumpState : Player_AiredState
         if (input.Player.Jump.WasReleasedThisFrame() && rb.linearVelocity.y > 0 && !jumpCut)
         {
             jumpCut = true;
-            player.SetVelocity(rb.linearVelocity.x, rb.linearVelocity.y * player.jumpCutMultiplier);
         }
         
         if (rb.linearVelocity.y < 0 && stateMachine.currentState != player.jumpAttackState)
             stateMachine.ChangeState(player.fallState);
+    }
+    
+    public override void PhysicsUpdate()
+    {
+        base.PhysicsUpdate();
+
+        if (jumpCut && rb.linearVelocity.y > 0)
+        {
+            player.SetVelocity(
+                rb.linearVelocity.x,
+                rb.linearVelocity.y * player.jumpCutMultiplier
+            );
+
+            jumpCut = false;
+        }
     }
 }

@@ -17,10 +17,7 @@ public class Player_GroundedState : PlayerState
         base.Update();
 
         if (rb.linearVelocity.y < 0 && player.groundDetected == false)
-        {
-            player.coyoteTimeCounter = player.coyoteTime;
             stateMachine.ChangeState(player.fallState);
-        }
 
         if(input.Player.Jump.WasPressedThisFrame())
             stateMachine.ChangeState(player.jumpState);

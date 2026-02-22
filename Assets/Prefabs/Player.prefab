@@ -256,6 +256,7 @@ MonoBehaviour:
   groundCheck: {fileID: 6753232042171600780}
   primaryWallcheck: {fileID: 1974773612155375465}
   secondaryWallcheck: {fileID: 8367488964600871503}
+  cm: {fileID: 0}
   attackVelocity:
   - {x: 0, y: 0}
   - {x: 0, y: 0}
@@ -263,14 +264,15 @@ MonoBehaviour:
   jumpAttackVelocity: {x: 5, y: -6}
   attackVelocityDuration: 0.1
   comboResetTime: 1
-  moveSpeed: 8
-  jumpForce: 14
-  wallJumpForce: {x: 7, y: 13}
+  moveSpeed: 10
+  groundAcceleration: 55
+  jumpForce: 16
+  wallJumpForce: {x: 9, y: 15}
   coyoteTime: 0.1
   coyoteTimeCounter: 0
-  inAirMoveMultiplier: 1
+  inAirMoveMultiplier: 0.9
   jumpCutMultiplier: 0.5
-  wallSlideSlowMultiplier: 0.7
+  wallSlideSlowMultiplier: 0.9
   dashCooldown: 0.8
   dashCooldownTimer: 0
   dashDuration: 0.25

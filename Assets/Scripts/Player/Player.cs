@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class Player : Entity
@@ -32,6 +31,7 @@ public class Player : Entity
 
     [Header("Movement Details")]
     public float moveSpeed;
+    public float groundAcceleration = 55f;
     public float jumpForce = 5f;
     public Vector2 wallJumpForce;
     

@@ -18,7 +18,7 @@ public abstract class PlayerState : EntityState
     {
         base.Update();
 
-        if (player.dashCooldown > 0)
+        if (player.dashCooldownTimer > 0)
             player.dashCooldownTimer -= Time.deltaTime;
 
         if(input.Player.Dash.WasPressedThisFrame() && CanDash())

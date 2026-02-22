@@ -27,5 +27,10 @@ public class StateMachine
         currentState.Update();
     }
 
+    public void PhysicsUpdateActiveState()
+    {
+        currentState.PhysicsUpdate();
+    }
+
     public void SwitchOffStateMachine() => canChangeState = false;
 }
