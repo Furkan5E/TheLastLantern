@@ -9,7 +9,6 @@ public class Player_WallSlideState : PlayerState
     public override void Update()
     {
         base.Update();
-        HandleWallSlide();
 
         if(input.Player.Jump.WasPressedThisFrame())
             stateMachine.ChangeState(player.wallJumpState);
@@ -21,6 +20,12 @@ public class Player_WallSlideState : PlayerState
             stateMachine.ChangeState(player.idleState);
             player.Flip();
         }
+    }
+
+    public override void PhysicsUpdate()
+    {
+        base.PhysicsUpdate();
+        HandleWallSlide();
     }
 
     private void HandleWallSlide()
