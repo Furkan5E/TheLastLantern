@@ -41,8 +41,13 @@ public class Entity : MonoBehaviour
 
     protected virtual void Update()
     {
-        HandleCollisionDetection();
         stateMachine.UpdateActiveState();
+    }
+
+    protected virtual void FixedUpdate()
+    {
+        HandleCollisionDetection();
+        stateMachine.PhysicsUpdateActiveState();
     }
 
     public void CurrentStateAnimationTrigger()
@@ -52,7 +57,6 @@ public class Entity : MonoBehaviour
 
     public virtual void EntityDeath()
     {
-        
     }
 
     public void ReciveKnockback(Vector2 knockback, float duration)
