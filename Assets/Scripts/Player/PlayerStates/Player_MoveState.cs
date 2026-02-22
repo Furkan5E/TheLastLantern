@@ -10,9 +10,23 @@ public class Player_MoveState : Player_GroundedState
     {
         base.Update();
 
-        if(player.moveInput.x == 0 || player.wallDetected)
+        if (player.moveInput.x == 0 || player.wallDetected)
             stateMachine.ChangeState(player.idleState);
+    }
 
-        player.SetVelocity(player.moveInput.x * player.moveSpeed, rb.linearVelocity.y);
+    public override void PhysicsUpdate()
+    {
+        base.PhysicsUpdate();
+
+        float targetSpeed = player.moveInput.x * player.moveSpeed;
+        float currentSpeed = rb.linearVelocity.x;
+
+        float newSpeed = Mathf.MoveTowards(
+            currentSpeed,
+            targetSpeed,
+            player.groundAcceleration * Time.fixedDeltaTime
+        );
+
+        player.SetVelocity(newSpeed, rb.linearVelocity.y);
     }
 }
