@@ -1,3 +1,4 @@
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -41,6 +42,19 @@ public class Entity_Health : MonoBehaviour, IDamageable
 
         if(currentHp < 0)
             Die();
+    }
+
+    public void IncreaseHp(float healAmount)
+    {
+        if (!CanHeal())
+            return;
+
+        currentHp = Mathf.Min(currentHp + healAmount, maxHp);
+    }
+
+    public bool CanHeal()
+    {
+        return !isDead && currentHp < maxHp;
     }
 
     private void Die()
