@@ -4,7 +4,7 @@ public class Enemy_Health : Entity_Health
 {
     private Enemy enemy;
 
-    private void Start()
+    protected override void Start()
     {
         enemy = GetComponent<Enemy>();    
     }
