@@ -33,7 +33,7 @@ public class SaveManager : MonoBehaviour
         }
 
         foreach (var saveable in allSaveables)
-            saveable.loadData(gameData);
+            saveable.LoadData(gameData);
     }
 
     public void SaveGame()

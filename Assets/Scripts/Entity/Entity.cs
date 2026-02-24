@@ -7,13 +7,10 @@ public class Entity : MonoBehaviour
     public Rigidbody2D rb { get; private set; }
     protected StateMachine stateMachine;
 
-
-
     private bool facingRight = true;
     public int facingDir { get; private set; } = 1;
 
-
-    [Header("Collision detection")]
+    [Header("Collision Details")]
     [SerializeField] protected LayerMask whatIsGround;
     [SerializeField] private float groundCheckDistance;
     [SerializeField] private float wallCheckDistance;
@@ -33,7 +30,6 @@ public class Entity : MonoBehaviour
 
         stateMachine = new StateMachine();
     }
-
 
     protected virtual void Start()
     {
@@ -107,7 +103,6 @@ public class Entity : MonoBehaviour
 
         if (secondaryWallcheck != null)
         {
-
             wallDetected = Physics2D.Raycast(primaryWallcheck.position, Vector2.right * facingDir, wallCheckDistance, whatIsGround)
                         && Physics2D.Raycast(secondaryWallcheck.position, Vector2.right * facingDir, wallCheckDistance, whatIsGround);
         }
@@ -125,22 +120,4 @@ public class Entity : MonoBehaviour
         if (secondaryWallcheck != null)
             Gizmos.DrawLine(secondaryWallcheck.position, secondaryWallcheck.position + new Vector3(wallCheckDistance * facingDir, 0));
     }
-
-
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        // Re-enable the collider when player exits, so item can be collected later if conditions change
-        Item item = other.gameObject.GetComponent<Item>();
-        if (item != null)
-        {
-            Collider2D itemCollider = other.GetComponent<Collider2D>();
-            if (itemCollider != null && !itemCollider.enabled)
-            {
-                itemCollider.enabled = true;
-            }
-        }
-    }
-
-
 }

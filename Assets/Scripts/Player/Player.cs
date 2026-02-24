@@ -18,10 +18,6 @@ public class Player : Entity
     public Player_DashState dashState { get; private set; }
     public Player_DeadState deadState { get; private set; }
 
-    [Header("Collision Details")]
-    //this is used to determine if the player is grounded or touching a wall, and is set in the inspector
-    public CurrencyManager cm;
-
     [Header("Attack Details")]
     public Vector2[] attackVelocity;
     public Vector2 jumpAttackVelocity;
@@ -51,11 +47,6 @@ public class Player : Entity
     public float dashCooldownTimer;
     public float dashDuration = 0.25f;
     public float dashSpeed = 20;
-
-    [Header("Health")]
-    public int health = 5;
-    public int maxHealth = 5;
-    public const int MAX_HEALTH_CAP = 7;
 
     [Header("Visual Effects")]
     public ParticleSystem landingDustFX;
@@ -103,80 +94,13 @@ public class Player : Entity
         yield return new WaitForEndOfFrame();
         stateMachine.ChangeState(basicAttackState);
     }
-
-
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
-
-         if (other.gameObject.CompareTag("FireFlies"))
-        {
-            //access the coin manager and increase the coin count, then destroy the coin
-            Destroy(other.gameObject);
-            //increase the coin count in the coin manager
-            cm.fireflies++;  
-        }
-
-
-        Item item = other.gameObject.GetComponent<Item>();
-        if (item == null)
-        {
-            return;
-        }
-
-        Debug.Log("Trigger with " + item.itemType);
-
-        bool canCollect = true;
-
-        switch (item.itemType)
-        {
-            case ItemType.HealthPotion:
-                // Check if already at max health cap
-                if (maxHealth >= MAX_HEALTH_CAP)
-                {
-                    Debug.Log("Max health already at cap (" + MAX_HEALTH_CAP + "), cannot collect");
-                    canCollect = false;
-                    break;
-                }
-
-                // Increase health but clamp to cap
-                maxHealth = Mathf.Min(maxHealth + item.healthIncrease, MAX_HEALTH_CAP);
-                Debug.Log("Max Health: " + maxHealth);
-                break;
-
-            case ItemType.SpeedPotion:
-                moveSpeed += item.speedIncrease;
-                Debug.Log("Move Speed: " + moveSpeed);
-                break;
-
-            case ItemType.HealingPotion:
-                if (health == maxHealth)
-                {
-                    Debug.Log("Health is already at max (" + health + "), cannot collect");
-                    canCollect = false;
-                    break;
-                }
-                health = Mathf.Min(health + item.healingAmount, maxHealth);
-                Debug.Log("Health: " + health);
-                break;
-        }
-
-        if (canCollect)
-        {
-            // Remove the collected item
-            Destroy(other.gameObject);
-        }
-        else
-        {
-            // Disable the collider to prevent repeated trigger events
-            // This prevents the visual glitch when the item can't be collected
-            Collider2D itemCollider = other.GetComponent<Collider2D>();
-            if (itemCollider != null)
-            {
-                itemCollider.enabled = false;
-            }
-        }
+        ICollectable collectable = other.GetComponent<ICollectable>();
+        collectable?.OnCollect(this);
     }
-
+    
     private void OnEnable()
     {
         input.Enable();

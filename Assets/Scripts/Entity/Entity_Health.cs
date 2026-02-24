@@ -1,4 +1,4 @@
-using Unity.VisualScripting;
+using System;
 using UnityEngine;
 
 public class Entity_Health : MonoBehaviour, IDamageable
@@ -6,7 +6,9 @@ public class Entity_Health : MonoBehaviour, IDamageable
     private Entity entity;
     private Entity_VFX entityVfx;
     [SerializeField] protected float maxHp = 5;
+    public int MaxHp => Mathf.RoundToInt(maxHp);
     public float currentHp { get; private set; }
+    public event Action<float, float> OnHealthChanged;
     protected bool isDead;
 
     [Header("On Damage Knockback")]
@@ -18,6 +20,11 @@ public class Entity_Health : MonoBehaviour, IDamageable
         currentHp = maxHp;
         entity = GetComponent<Entity>();
         entityVfx = GetComponent<Entity_VFX>();
+    }
+
+    protected virtual void Start()
+    {
+        OnHealthChanged?.Invoke(currentHp, maxHp);
     }
 
     public virtual void TakeDamage(float damage, Transform damageDealer)
@@ -41,6 +48,22 @@ public class Entity_Health : MonoBehaviour, IDamageable
 
         if(currentHp < 0)
             Die();
+
+        OnHealthChanged?.Invoke(currentHp, maxHp);
+    }
+
+    public void IncreaseHp(float healAmount)
+    {
+        if (!CanHeal())
+            return;
+
+        currentHp = Mathf.Min(currentHp + healAmount, maxHp);
+        OnHealthChanged?.Invoke(currentHp, maxHp);
+    }
+
+    public bool CanHeal()
+    {
+        return !isDead && currentHp < maxHp;
     }
 
     private void Die()
