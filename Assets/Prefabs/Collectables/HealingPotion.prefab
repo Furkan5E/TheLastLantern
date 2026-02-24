@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7396330239055689443}
   - component: {fileID: 8086201829674087020}
-  - component: {fileID: 8747331776968188358}
   - component: {fileID: 3312769290410131679}
+  - component: {fileID: 2352374301983464734}
   m_Layer: 0
   m_Name: HealingPotion
   m_TagString: Untagged
@@ -93,19 +93,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &8747331776968188358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5170549964058478461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d3d5b55be4858a46adcee4ecd905ced, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Item
-  amount: 1
 --- !u!58 &3312769290410131679
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -142,3 +129,16 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &2352374301983464734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5170549964058478461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d3d5b55be4858a46adcee4ecd905ced, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Collectable_Health
+  amount: 1

@@ -6,7 +6,13 @@ public class Collectable_Firefly : MonoBehaviour, ICollectable
 
     public void OnCollect(Player player)
     {
-        CurrencyManager.Instance.Add(amount);
-        gameObject.SetActive(false);
+        CurrencyManager currencyManager = CurrencyManager.Instance;
+        if (currencyManager != null){
+            currencyManager.Add(amount);
+            //gameObject.SetActive(false);
+            Destroy(gameObject);
+        }
+        else
+            Debug.LogWarning("currencyManager is null");
     }
 }

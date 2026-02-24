@@ -12,6 +12,6 @@ public class Collectable_Health : MonoBehaviour, ICollectable
             return;
 
         health.IncreaseHp(amount);
-        gameObject.SetActive(false);
+        Destroy(gameObject);
     }
-}   
+}

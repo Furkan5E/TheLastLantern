@@ -16,4 +16,10 @@ public class CurrencyUI : MonoBehaviour
     {
         fireflyText.text = $"Fireflies: {amount}";
     }
+
+    private void OnDestroy()
+    {
+        if (CurrencyManager.Instance != null)
+            CurrencyManager.Instance.OnFirefliesChanged -= UpdateUI;
+    }
 }
