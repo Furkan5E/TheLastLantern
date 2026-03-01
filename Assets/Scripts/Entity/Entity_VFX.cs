@@ -18,6 +18,9 @@ public class Entity_VFX : MonoBehaviour
     [Header("Landing VFX")]
     [SerializeField] private ParticleSystem landingVfx;
 
+    [Header("Dashing VFX")]
+    [SerializeField] private TrailRenderer dashTrail;
+
     private void Awake()
     {
         sr = GetComponentInChildren<SpriteRenderer>();
@@ -51,5 +54,11 @@ public class Entity_VFX : MonoBehaviour
     {
         if (landingVfx != null)
             landingVfx.Play();
+    }
+    
+    public void EnableDashTrail(bool enable)
+    {
+        if (dashTrail != null)
+            dashTrail.emitting = enable;
     }
 }
