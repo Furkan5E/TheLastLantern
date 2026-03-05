@@ -20,6 +20,8 @@ public class Player_DashState : PlayerState
 
         originalGravityScale = rb.gravityScale;
         rb.gravityScale = 0;
+
+        player.vfx.EnableDashTrail(true);
     }
 
     public override void Update()
@@ -47,6 +49,7 @@ public class Player_DashState : PlayerState
         base.Exit();
         player.SetVelocity(0, 0);
         rb.gravityScale = originalGravityScale;
+        player.vfx.EnableDashTrail(false);
     }
 
     private void CancelDashIfNeeded()
