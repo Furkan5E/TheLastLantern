@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 6b724bff515fa244cb33a0780401a4f5
+guid: 3165f283b3c034a90abdd8d19e1419bc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6513743853152151312
-    second: content_0
-  - first:
-      213: -7696992917719967554
-    second: content_1
+      213: 1717498700951244547
+    second: fly_enemy3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -54,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 50
+  spritePixelsToUnits: 70
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -103,35 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: content_0
+      name: fly_enemy3_0
       rect:
         serializedVersion: 2
-        x: 1335
-        y: 269
-        width: 24
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0f85bf21a788a95a0800000000000000
-      internalID: -6513743853152151312
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: content_1
-      rect:
-        serializedVersion: 2
-        x: 2
+        x: 0
         y: 0
-        width: 1533
-        height: 268
+        width: 157
+        height: 107
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: eb89a94c8b9ce2590800000000000000
-      internalID: -7696992917719967554
+      spriteID: 30fc46408f7c5d710800000000000000
+      internalID: 1717498700951244547
       vertices: []
       indices: 
       edges: []
@@ -160,8 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      content_0: -6513743853152151312
-      content_1: -7696992917719967554
+      fly_enemy3_0: 1717498700951244547
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

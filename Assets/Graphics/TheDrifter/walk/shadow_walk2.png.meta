@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1e9aab3483850c0408b5bd731a56eba8
+guid: 7406b2f72e3a44d0293ac6ee8be6cbf7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8618853288957320241
-    second: content-1_0
+      213: 3542114027596065884
+    second: shadow_walk2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 50
+  spritePixelsToUnits: 70
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: content-1_0
+      name: shadow_walk2_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1536
-        height: 688
+        x: 19
+        y: 5
+        width: 80
+        height: 249
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 13c1283d6615c9770800000000000000
-      internalID: 8618853288957320241
+      spriteID: c5caac0f0fd182130800000000000000
+      internalID: 3542114027596065884
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      content-1_0: 8618853288957320241
+      shadow_walk2_0: 3542114027596065884
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

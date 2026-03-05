@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5339c76c5dea245589068e127d0df691
+guid: c5b431fe6b3194456866a7e7ddaa81a9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -343576357509003333
-    second: platform4_0
+      213: -5991648473588351667
+    second: hunched_walk4_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: platform4_0
+      name: hunched_walk4_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 256
-        height: 62
+        x: 37
+        y: 1
+        width: 122
+        height: 212
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bb704798f1f5b3bf0800000000000000
-      internalID: -343576357509003333
+      spriteID: d4d31c8557369dca0800000000000000
+      internalID: -5991648473588351667
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      platform4_0: -343576357509003333
+      hunched_walk4_0: -5991648473588351667
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

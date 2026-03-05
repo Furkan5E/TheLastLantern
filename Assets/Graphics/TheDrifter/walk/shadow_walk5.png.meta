@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b35d7f64fd0ef4ab2b85c5ba05100169
+guid: 37750199dffcf412c94cd9f50cee891a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8176988884799877681
-    second: platform1_0
+      213: 3734204611191565237
+    second: shadow_walk5_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: platform1_0
+      name: shadow_walk5_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 256
-        height: 63
+        x: 28
+        y: 4
+        width: 118
+        height: 243
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 13270d231108a7170800000000000000
-      internalID: 8176988884799877681
+      spriteID: 5bbe2b82f4f82d330800000000000000
+      internalID: 3734204611191565237
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      platform1_0: 8176988884799877681
+      shadow_walk5_0: 3734204611191565237
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
