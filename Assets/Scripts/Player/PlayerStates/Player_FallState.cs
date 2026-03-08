@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.VFX;
 
 public class Player_FallState : Player_AiredState
 {
@@ -37,12 +36,7 @@ public class Player_FallState : Player_AiredState
 
         if (player.groundDetected)
         {
-            var main = player.landingDustFX.main;
-
-            float fallSpeed = Mathf.Abs(rb.linearVelocity.y);
-            main.startSpeed = Mathf.Lerp(2f, 8f, fallSpeed / 20f);
-
-            player.landingDustFX.Play();
+            player.vfx.PlayLandingVfx();
 
             if (player.moveInput.x != 0)
                 stateMachine.ChangeState(player.moveState);

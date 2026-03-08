@@ -15,6 +15,12 @@ public class Entity_VFX : MonoBehaviour
     [SerializeField] private Color hitVfxColor = Color.white;
     [SerializeField] private GameObject hitVfx;
 
+    [Header("Landing VFX")]
+    [SerializeField] private ParticleSystem landingVfx;
+
+    [Header("Dashing VFX")]
+    [SerializeField] private TrailRenderer dashTrail;
+
     private void Awake()
     {
         sr = GetComponentInChildren<SpriteRenderer>();
@@ -42,5 +48,17 @@ public class Entity_VFX : MonoBehaviour
 
         yield return new WaitForSeconds(onDamageVfxDuration);
         sr.material = originalMaterial;
+    }
+
+    public void PlayLandingVfx()
+    {
+        if (landingVfx != null)
+            landingVfx.Play();
+    }
+    
+    public void EnableDashTrail(bool enable)
+    {
+        if (dashTrail != null)
+            dashTrail.emitting = enable;
     }
 }
