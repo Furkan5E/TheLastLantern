@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class UI_Game : MonoBehaviour
+public class UI_HUD : MonoBehaviour
 {
     [Header("Health Settings")]
     [SerializeField] private Entity_Health playerHealth;
