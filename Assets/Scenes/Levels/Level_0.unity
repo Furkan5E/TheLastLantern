@@ -313,6 +313,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2905538007892320488, guid: 300a2d26714694f15ab5814509c83cee, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 1292546940}
     - target: {fileID: 4791516671453174700, guid: 300a2d26714694f15ab5814509c83cee, type: 3}
       propertyPath: Target.TrackingTarget
       value: 
@@ -727,6 +731,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueToggle
   dialogueObject: {fileID: 847483971}
   dialogueData: {fileID: 11400000, guid: 6d61ef268140c9841825e6eb6ae9bcce, type: 2}
+  playerInput: {fileID: 0}
+  player: {fileID: 0}
+  interactActionName: Interact
 --- !u!61 &439859804
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1435,6 +1442,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueToggle
   dialogueObject: {fileID: 847483971}
   dialogueData: {fileID: 11400000, guid: bcf681f4fd2483241baae34d05d9efe9, type: 2}
+  playerInput: {fileID: 0}
+  player: {fileID: 0}
+  interactActionName: Interact
 --- !u!61 &690633899
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2104,6 +2114,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueToggle
   dialogueObject: {fileID: 847483971}
   dialogueData: {fileID: 11400000, guid: 9d708d0138f8fc94393f0ac2aef843dd, type: 2}
+  playerInput: {fileID: 0}
+  player: {fileID: 0}
+  interactActionName: Interact
 --- !u!61 &1438435661
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2937,6 +2950,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueToggle
   dialogueObject: {fileID: 847483971}
   dialogueData: {fileID: 11400000, guid: 97cd52c9050b27b4b877f2a7823aec2b, type: 2}
+  playerInput: {fileID: 0}
+  player: {fileID: 0}
+  interactActionName: Interact
 --- !u!61 &1696943524
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3090,6 +3106,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueToggle
   dialogueObject: {fileID: 847483971}
   dialogueData: {fileID: 11400000, guid: 5545d45ca557c8541a0a443195fb990c, type: 2}
+  playerInput: {fileID: 0}
+  player: {fileID: 0}
+  interactActionName: Interact
 --- !u!61 &1704581827
 BoxCollider2D:
   m_ObjectHideFlags: 0
