@@ -41,6 +41,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "2aedd32b-8935-4052-9658-57f94730ce76",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -321,73 +330,12 @@
                 },
                 {
                     "name": "",
-                    "id": "0af513a3-243a-411a-afe0-946020a62890",
-                    "path": "<Gamepad>/buttonEast",
+                    "id": "3afe45ca-4fa6-4f49-a16c-b1f07ab270cf",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Dash",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "b75d1312-37a4-4f7d-b585-2b5245ce3af1",
-                    "path": "<Mouse>/rightButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Dash",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "55137af5-5f19-47f9-8ab7-a54403aa2e2d",
-                    "path": "<Gamepad>/rightTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Dash",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "UI",
-            "id": "672f163a-92dd-495b-ab30-28389a7e8dc8",
-            "actions": [
-                {
-                    "name": "OptionsUI",
-                    "type": "Button",
-                    "id": "559be113-b102-4073-8952-28528b3f76f1",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "",
-                    "id": "358cc6bf-2767-4fa4-96f2-f899fac4489f",
-                    "path": "<Keyboard>/escape",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "OptionsUI",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "f09331c4-aefc-470f-8144-4da734790506",
-                    "path": "<Gamepad>/start",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "OptionsUI",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
