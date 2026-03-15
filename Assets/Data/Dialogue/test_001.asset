@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e311febb20205cf429a82a1f2be77842, type: 3}
   m_Name: test_001
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
-  dialogueId: 
-  lines: []
+  dialogueId: test_001
+  lines:
+  - speaker: Old Sign
+    text: Careful.. Danger up ahead...

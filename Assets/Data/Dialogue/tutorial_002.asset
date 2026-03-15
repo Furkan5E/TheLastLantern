@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e311febb20205cf429a82a1f2be77842, type: 3}
   m_Name: tutorial_002
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
-  dialogueId: 
-  lines: []
+  dialogueId: tutorial_002
+  lines:
+  - speaker: Tutorial
+    text: Great job! Now jump as far as possible to the right.

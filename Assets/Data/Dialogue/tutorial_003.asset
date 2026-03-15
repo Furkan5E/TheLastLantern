@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e311febb20205cf429a82a1f2be77842, type: 3}
   m_Name: tutorial_003
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
-  dialogueId: 
-  lines: []
+  dialogueId: tutorial_003
+  lines:
+  - speaker: Tutorial
+    text: Time defeat your first enemy! go in and attack the Drifter!

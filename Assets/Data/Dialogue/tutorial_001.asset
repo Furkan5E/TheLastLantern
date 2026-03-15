@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e311febb20205cf429a82a1f2be77842, type: 3}
   m_Name: tutorial_001
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
-  dialogueId: 
-  lines: []
+  dialogueId: tutorial_001
+  lines:
+  - speaker: Tutorial
+    text: Welcome to the tutorial! Let's learn how to move around.
+  - speaker: Tutorial
+    text: Take your time and figure out how to jump and dash
