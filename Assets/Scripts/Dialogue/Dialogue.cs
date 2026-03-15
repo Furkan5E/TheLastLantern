@@ -13,6 +13,9 @@ public class Dialogue : MonoBehaviour
     public float textSpeed = 0.05f;
 
     private DialogueSO dialogueData;
+    private InputAction interactAction;
+    private int openedFrame = -1;
+    private bool isSubscribed;
 
     private string[] lines;
     private string[] speakers;
@@ -23,23 +26,54 @@ public class Dialogue : MonoBehaviour
         dialogueData = data;
     }
 
-    void Update()
+    public void SetInteractAction(InputAction action)
     {
-        if (lines == null || lines.Length == 0)
+        if (interactAction == action)
             return;
 
-        if (Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame && gameObject.activeSelf)
+        UnsubscribeInteractAction();
+        interactAction = action;
+
+        if (gameObject.activeInHierarchy)
+            SubscribeInteractAction();
+    }
+
+    private void OnInteractPerformed(InputAction.CallbackContext context)
+    {
+        if (!gameObject.activeSelf || lines == null || lines.Length == 0)
+            return;
+
+        // Ignore the first frame so opening the dialogue doesn't instantly consume input.
+        if (Time.frameCount == openedFrame)
+            return;
+
+        if (textComponent.text == lines[index])
         {
-            if (textComponent.text == lines[index])
-            {
-                NextLine();
-            }
-            else
-            {
-                StopAllCoroutines();
-                textComponent.text = lines[index];
-            }
+            NextLine();
         }
+        else
+        {
+            StopAllCoroutines();
+            textComponent.text = lines[index];
+        }
+    }
+
+    private void SubscribeInteractAction()
+    {
+        if (interactAction == null || isSubscribed)
+            return;
+
+        interactAction.performed += OnInteractPerformed;
+        isSubscribed = true;
+    }
+
+    private void UnsubscribeInteractAction()
+    {
+        if (interactAction == null || !isSubscribed)
+            return;
+
+        interactAction.performed -= OnInteractPerformed;
+        isSubscribed = false;
     }
 
     void LoadDialogue(DialogueSO data)
@@ -97,6 +131,9 @@ public class Dialogue : MonoBehaviour
         if (dialogueData == null)
             return;
 
+        openedFrame = Time.frameCount;
+        SubscribeInteractAction();
+
         LoadDialogue(dialogueData);
 
         if (lines == null || lines.Length == 0)
@@ -109,5 +146,10 @@ public class Dialogue : MonoBehaviour
         index = 0;
         textComponent.text = string.Empty;
         StartCoroutine(TypeLine());
+    }
+
+    void OnDisable()
+    {
+        UnsubscribeInteractAction();
     }
 }
