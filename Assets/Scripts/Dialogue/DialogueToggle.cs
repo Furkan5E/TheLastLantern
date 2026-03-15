@@ -104,7 +104,7 @@ public class DialogueToggle : MonoBehaviour
         if (player != null && player.input != null)
             return player.input.Player.Interact;
 
-        Player foundPlayer = FindObjectOfType<Player>();
+        Player foundPlayer = FindFirstObjectByType<Player>();
         if (foundPlayer != null && foundPlayer.input != null)
         {
             player = foundPlayer;
