@@ -1,0 +1,66 @@
+{
+  "dialogues": [
+    {
+      "id": "test_001",
+      "lines": [
+        {
+          "speaker": "Old Sign",
+          "text": "Careful.. Danger up ahead!"
+        }
+      ]
+    },
+    {
+      "id": "tutorial_001",
+      "lines": [
+        {
+          "speaker": "Tutorial",
+          "text": "Welcome to the tutorial! Let's learn how to move around."
+        },
+        {
+          "speaker": "Tutorial",
+          "text": "Take your time and figure out how to jump and dash"
+        }
+      ]
+    },
+    {
+      "id": "tutorial_002",
+      "lines": [
+        {
+          "speaker": "Tutorial",
+          "text": "Great job! Now jump as far as possible to the right."
+        }
+      ]
+    },
+    {
+      "id": "tutorial_003",
+      "lines": [
+        {
+          "speaker": "Tutorial",
+          "text": "Time defeat your first enemy! go in and attack the Drifter!"
+        }
+      ]
+    },
+    {
+      "id": "tutorial_004",
+      "lines": [
+        {
+          "speaker": "Tutorial",
+          "text": "You did it! Now let's get out of here."
+        },
+        {
+          "speaker": "Tutorial",
+          "text": "Head right and climb to the top!"
+        }
+      ]
+    },
+    {
+      "id": "tutorial_005",
+      "lines": [
+        {
+          "speaker": "Tutorial",
+          "text": "Congratulations! You've completed the tutorial!"
+        }
+      ]
+    }
+  ]
+}
