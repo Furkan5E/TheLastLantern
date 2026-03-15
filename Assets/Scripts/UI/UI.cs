@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 
 public class UI : MonoBehaviour
 {
+    [SerializeField] private bool isMainMenuScene;
     [SerializeField] private RectTransform leftIndicator;
     [SerializeField] private RectTransform rightIndicator;
     [SerializeField] private float indicatorOffsetX = 80f;
@@ -16,6 +17,7 @@ public class UI : MonoBehaviour
     public UI_Audio audioUI { get; private set; }
     public UI_Video videoUI { get; private set; }
     public UI_Game gameUI { get; private set; }
+    public UI_MainMenu mainMenuUI { get; private set; }
 
     private Stack<GameObject> uiStack = new Stack<GameObject>();
     private PlayerInputSet input;
@@ -27,8 +29,17 @@ public class UI : MonoBehaviour
         audioUI = GetComponentInChildren<UI_Audio>(true);
         videoUI = GetComponentInChildren<UI_Video>(true);
         gameUI = GetComponentInChildren<UI_Game>(true);
+        mainMenuUI = GetComponentInChildren<UI_MainMenu>(true);
 
         HideIndicators();
+    }
+
+    private void Start()
+    {
+        if (isMainMenuScene && mainMenuUI != null)
+        {
+            PushScreen(mainMenuUI.gameObject);
+        }
     }
 
     public void SetupControlsUI(PlayerInputSet inputSet)
@@ -36,9 +47,9 @@ public class UI : MonoBehaviour
         input = inputSet;
         onOptionsPerformed = ctx =>
         {
-            if (uiStack.Count > 0)
+            if (uiStack.Count > (isMainMenuScene ? 1 : 0))
                 GoBack();
-            else
+            else if (!isMainMenuScene && pauseUI != null)
                 PushScreen(pauseUI.gameObject);
         };
         input.UI.OptionsUI.performed += onOptionsPerformed;
@@ -82,38 +93,50 @@ public class UI : MonoBehaviour
         uiStack.Push(screen);
         screen.SetActive(true);
 
-        if (uiStack.Count == 1)
+        if (!isMainMenuScene && uiStack.Count == 1)
         {
             Time.timeScale = 0;
-            input.Player.Disable();
+            input?.Player.Disable();
         }
     }
 
     public void GoBack()
     {
-        if (uiStack.Count == 0) return;
+        if (uiStack.Count <= (isMainMenuScene ? 1 : 0)) return;
 
         HideIndicators();
         uiStack.Pop().SetActive(false);
 
         if (uiStack.Count > 0)
             uiStack.Peek().SetActive(true);
-        else
+        
+        if (!isMainMenuScene && uiStack.Count == 0)
         {
             Time.timeScale = 1;
-            input.Player.Enable();
+            input?.Player.Enable();
         }
     }
 
     public void OnQuitPressed()
     {
-        while (uiStack.Count > 0)
-            uiStack.Pop().SetActive(false);
+        if (isMainMenuScene)
+        {
+            Application.Quit();
+            
+            #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+            #endif
+        }
+        else
+        {
+            while (uiStack.Count > 0)
+                uiStack.Pop().SetActive(false);
 
-        uiStack.Clear();
-        Time.timeScale = 1;
-        input.Player.Enable();  
-        SaveManager.Instance?.SaveGame();
-        SceneManager.LoadScene("MainMenu");
+            uiStack.Clear();
+            Time.timeScale = 1;
+            input?.Player.Enable();  
+            SaveManager.Instance?.SaveGame();
+            SceneManager.LoadScene("MainMenu");
+        }
     }
 }
