@@ -1,9 +1,7 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
-using UnityEngine.UI;
 
 public class Dialogue : MonoBehaviour
 {
@@ -14,24 +12,15 @@ public class Dialogue : MonoBehaviour
     [Header("Dialogue Settings")]
     public float textSpeed = 0.05f;
 
-    private string dialogueId;
-
-    [Header("Data")]
-    public TextAsset dialogueJson;
+    private DialogueSO dialogueData;
 
     private string[] lines;
     private string[] speakers;
     private int index;
-    private bool hasStarted;
 
-    void Start()
+    public void SetDialogue(DialogueSO data)
     {
-        hasStarted = true;
-    }
-
-    public void SetDialogueId(string id)
-    {
-        dialogueId = id;
+        dialogueData = data;
     }
 
     void Update()
@@ -53,45 +42,30 @@ public class Dialogue : MonoBehaviour
         }
     }
 
-    void LoadDialogue(string id)
+    void LoadDialogue(DialogueSO data)
     {
-        if (dialogueJson == null)
+        lines = null;
+        speakers = null;
+
+        if (data == null)
         {
-            Debug.LogError("Dialogue JSON not assigned.");
+            Debug.LogError("Dialogue data not assigned.");
             return;
         }
 
-        DialogueDatabase db =
-            JsonUtility.FromJson<DialogueDatabase>(dialogueJson.text);
-
-        if (db == null || db.dialogues == null)
+        if (data.lines == null || data.lines.Length == 0)
         {
-            Debug.LogError("Failed to parse dialogue JSON.");
+            Debug.LogError($"Dialogue '{data.name}' has no lines.");
             return;
         }
 
-        DialogueData dialogue =
-            Array.Find(db.dialogues, d => d.id == id);
-
-        if (dialogue == null)
+        lines = new string[data.lines.Length];
+        speakers = new string[data.lines.Length];
+        for (int i = 0; i < data.lines.Length; i++)
         {
-            Debug.LogError($"Dialogue with id '{id}' not found.");
-            return;
+            lines[i] = data.lines[i].text;
+            speakers[i] = data.lines[i].speaker;
         }
-
-        lines = new string[dialogue.lines.Length];
-        speakers = new string[dialogue.lines.Length];
-        for (int i = 0; i < dialogue.lines.Length; i++)
-        {
-            lines[i] = dialogue.lines[i].text;
-            speakers[i] = dialogue.lines[i].speaker;
-        }
-    }
-
-    void StartDialogue()
-    {
-        index = 0;
-        StartCoroutine(TypeLine());
     }
 
     IEnumerator TypeLine()
@@ -120,10 +94,10 @@ public class Dialogue : MonoBehaviour
 
     void OnEnable()
     {
-        if (string.IsNullOrEmpty(dialogueId))
+        if (dialogueData == null)
             return;
 
-        LoadDialogue(dialogueId);
+        LoadDialogue(dialogueData);
 
         if (lines == null || lines.Length == 0)
         {
@@ -135,29 +109,5 @@ public class Dialogue : MonoBehaviour
         index = 0;
         textComponent.text = string.Empty;
         StartCoroutine(TypeLine());
-    }
-
-    // ─────────────────────────────
-    // Nested JSON data structures
-    // ─────────────────────────────
-
-    [Serializable]
-    private class DialogueDatabase
-    {
-        public DialogueData[] dialogues;
-    }
-
-    [Serializable]
-    private class DialogueData
-    {
-        public string id;
-        public DialogueLine[] lines;
-    }
-
-    [Serializable]
-    private class DialogueLine
-    {
-        public string speaker;
-        public string text;
     }
 }
