@@ -726,7 +726,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueToggle
   dialogueObject: {fileID: 847483971}
-  dialogueId: tutorial_004
+  dialogueData: {fileID: 11400000, guid: 6d61ef268140c9841825e6eb6ae9bcce, type: 2}
 --- !u!61 &439859804
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1434,7 +1434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueToggle
   dialogueObject: {fileID: 847483971}
-  dialogueId: tutorial_001
+  dialogueData: {fileID: 11400000, guid: bcf681f4fd2483241baae34d05d9efe9, type: 2}
 --- !u!61 &690633899
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2103,7 +2103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueToggle
   dialogueObject: {fileID: 847483971}
-  dialogueId: tutorial_005
+  dialogueData: {fileID: 11400000, guid: 9d708d0138f8fc94393f0ac2aef843dd, type: 2}
 --- !u!61 &1438435661
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2936,7 +2936,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueToggle
   dialogueObject: {fileID: 847483971}
-  dialogueId: tutorial_002
+  dialogueData: {fileID: 11400000, guid: 97cd52c9050b27b4b877f2a7823aec2b, type: 2}
 --- !u!61 &1696943524
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3089,7 +3089,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueToggle
   dialogueObject: {fileID: 847483971}
-  dialogueId: tutorial_003
+  dialogueData: {fileID: 11400000, guid: 5545d45ca557c8541a0a443195fb990c, type: 2}
 --- !u!61 &1704581827
 BoxCollider2D:
   m_ObjectHideFlags: 0
