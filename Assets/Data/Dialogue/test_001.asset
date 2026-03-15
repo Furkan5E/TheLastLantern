@@ -15,4 +15,4 @@ MonoBehaviour:
   dialogueId: test_001
   lines:
   - speaker: Old Sign
-    text: Careful.. Danger up ahead...
+    text: Careful.. Danger up ahead!
