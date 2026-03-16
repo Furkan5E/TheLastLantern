@@ -5,11 +5,23 @@ using UnityEngine;
 
 public class SaveManager : MonoBehaviour
 {
+    public static SaveManager Instance { get; private set; }
+
     private FileDataHandler dataHandler;
     private GameData gameData;
     private List<ISaveable> allSaveables;
     [SerializeField] private string fileName = "save.json";
     [SerializeField] private bool encryptData = true;
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+    }
 
     private IEnumerator Start()
     {
@@ -38,6 +50,9 @@ public class SaveManager : MonoBehaviour
 
     public void SaveGame()
     {
+        if (allSaveables == null || dataHandler == null)
+            return;
+
         foreach(var saveable in allSaveables)
             saveable.SaveData(ref gameData);
 
@@ -62,6 +77,5 @@ public class SaveManager : MonoBehaviour
             FindObjectsByType<MonoBehaviour>(FindObjectsInactive.Include, FindObjectsSortMode.None)
             .OfType<ISaveable>()
             .ToList();
-
     }
 }
