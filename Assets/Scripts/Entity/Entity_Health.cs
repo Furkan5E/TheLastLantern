@@ -46,7 +46,7 @@ public class Entity_Health : MonoBehaviour, IDamageable
     {
         currentHp -= damage;
 
-        if(currentHp < 0)
+        if(currentHp <= 0)
             Die();
 
         OnHealthChanged?.Invoke(currentHp, maxHp);
