@@ -396,7 +396,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 1
-  m_PointLightOuterRadius: 16
+  m_PointLightOuterRadius: 20
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -5675,6 +5675,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1545727919179582570}
+  - component: {fileID: 9215840779562186317}
   m_Layer: 7
   m_Name: Lights
   m_TagString: Untagged
@@ -5700,6 +5701,25 @@ Transform:
   - {fileID: 2752518782961127615}
   m_Father: {fileID: 6753232042171600780}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9215840779562186317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7371075455155368369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03b865fd0bb478a4c9c2a0a95366a470, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LightHealthController
+  healthScript: {fileID: 3770408055943487644}
+  lightsSettings:
+  - light: {fileID: 2329992525414531609}
+    minIntensity: 7.5
+    maxIntensity: 9
+    minOuterRadius: 9
+    maxOuterRadius: 20
 --- !u!1 &8589425272219849700
 GameObject:
   m_ObjectHideFlags: 0
