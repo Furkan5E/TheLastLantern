@@ -350,17 +350,6 @@ public partial class @PlayerInputSet: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""2b5a45e6-5b4d-4058-8d81-4f9647447a47"",
-                    ""path"": ""<Keyboard>/z"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Jump"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""8740d59b-605c-4eca-88ba-4071904f51ed"",
                     ""path"": ""<Keyboard>/shift"",
                     ""interactions"": """",
