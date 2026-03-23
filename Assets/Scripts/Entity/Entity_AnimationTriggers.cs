@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class Entity_AnimationTriggers : MonoBehaviour
 {
-    private Entity entity;
-    private Entity_Combat entityCombat;
+    protected Entity entity;
+    protected Entity_Combat entityCombat;
     
     protected virtual void Awake()
     {

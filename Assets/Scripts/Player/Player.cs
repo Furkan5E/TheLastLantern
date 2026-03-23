@@ -23,7 +23,7 @@ public class Player : Entity
 
     [Header("Attack Details")]
     public Vector2[] attackVelocity;
-    public Vector2 jumpAttackVelocity;
+    public float jumpAttackForce = 23f;
     public float attackVelocityDuration = 0.1f;
     public float comboResetTime = 1f;
     private Coroutine queuedAttackCoroutine;
