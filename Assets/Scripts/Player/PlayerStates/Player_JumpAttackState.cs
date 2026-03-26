@@ -3,6 +3,7 @@ using UnityEngine;
 public class Player_JumpAttackState : PlayerState
 {
     private bool touchedGround;
+
     public Player_JumpAttackState(Player player, StateMachine stateMachine, string animBoolName) : base(player, stateMachine, animBoolName)
     {
     }
@@ -11,21 +12,32 @@ public class Player_JumpAttackState : PlayerState
     {
         base.Enter();
         touchedGround = false;
-
-        player.SetVelocity(player.jumpAttackVelocity.x * player.facingDir, player.jumpAttackVelocity.y);
     }
 
     public override void Update()
     {
         base.Update();
+
         if (player.groundDetected && touchedGround == false)
         {
             touchedGround = true;
             anim.SetTrigger("jumpAttackTrigger");
-            player.SetVelocity(0, rb.linearVelocity.y);
         }
 
-        if (triggerCalled && player.groundDetected)
-            stateMachine.ChangeState(player.idleState);
+        if (triggerCalled)
+        {
+            if (player.groundDetected)
+                stateMachine.ChangeState(player.idleState);
+            else
+                stateMachine.ChangeState(player.fallState);
+        }
+    }
+
+    public override void PhysicsUpdate()
+    {
+        base.PhysicsUpdate();
+        
+        float xVelocity = player.moveInput.x * player.moveSpeed * player.inAirMoveMultiplier;
+        player.SetVelocity(xVelocity, rb.linearVelocity.y);
     }
 }

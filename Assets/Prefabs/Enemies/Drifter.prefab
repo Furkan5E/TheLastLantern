@@ -40,9 +40,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4895875094893659344}
-  - component: {fileID: 7539742677068557683}
   - component: {fileID: 3646504589508090141}
   - component: {fileID: 6181298908982419684}
+  - component: {fileID: 7539742677068557683}
   - component: {fileID: 6194862084195369654}
   - component: {fileID: 4212272475337580747}
   - component: {fileID: 4386222517000343292}
@@ -70,43 +70,9 @@ Transform:
   - {fileID: 8259121945852258833}
   - {fileID: 3683150350280413127}
   - {fileID: 1976058248082253054}
+  - {fileID: 75086119934463390}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7539742677068557683
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3835191908894205183}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6b66a1c515e2482987ce40ba919edd2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HunchedEnemy
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 64
-  groundCheckDistance: 0.6
-  wallCheckDistance: 2
-  groundCheck: {fileID: 3683150350280413127}
-  primaryWallcheck: {fileID: 4895875094893659344}
-  secondaryWallcheck: {fileID: 0}
-  battleMoveSpeed: 3
-  attackDistance: 2
-  battleTimeDuration: 5
-  minRetreatDistance: 1
-  retreatVelocity: {x: 5, y: 3}
-  stunnedDuration: 0.1
-  stunnnedVelocity: {x: 7, y: 2}
-  idleTime: 2
-  moveSpeed: 1.4
-  runAnimSpeedMultiplier: 1.4
-  whatIsPlayer:
-    serializedVersion: 2
-    m_Bits: 128
-  playerCheck: {fileID: 4895875094893659344}
-  playerCheckDistance: 10
 --- !u!50 &3646504589508090141
 Rigidbody2D:
   serializedVersion: 5
@@ -171,6 +137,41 @@ CapsuleCollider2D:
   m_Offset: {x: 0.19573903, y: 0.028045058}
   m_Size: {x: 0.7396951, y: 2.4312513}
   m_Direction: 0
+--- !u!114 &7539742677068557683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3835191908894205183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6b66a1c515e2482987ce40ba919edd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HunchedEnemy
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 64
+  groundCheckDistance: 0.6
+  wallCheckDistance: 2
+  groundCheck: {fileID: 3683150350280413127}
+  primaryWallcheck: {fileID: 75086119934463390}
+  secondaryWallcheck: {fileID: 0}
+  battleMoveSpeed: 3
+  attackDistance: 2
+  battleTimeDuration: 5
+  minRetreatDistance: 1
+  retreatVelocity: {x: 5, y: 3}
+  stunnedDuration: 0.1
+  stunnnedVelocity: {x: 7, y: 2}
+  idleTime: 2
+  moveSpeed: 1.4
+  runAnimSpeedMultiplier: 1.4
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 128
+  playerCheck: {fileID: 4895875094893659344}
+  playerCheckDistance: 10
 --- !u!114 &6194862084195369654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,6 +221,8 @@ MonoBehaviour:
   onDamageVfxDuration: 0.15
   hitVfxColor: {r: 1, g: 1, b: 1, a: 1}
   hitVfx: {fileID: 990671474936042315, guid: e3effc53bea892d41b2e0f1ae93e4870, type: 3}
+  landingVfx: {fileID: 0}
+  dashTrail: {fileID: 0}
 --- !u!114 &8271446652268286558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -298,6 +301,37 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.689, y: -0.109, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4895875094893659344}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7495568126799278798
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 75086119934463390}
+  m_Layer: 8
+  m_Name: WallCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &75086119934463390
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7495568126799278798}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.464, y: 0.512, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -405,7 +439,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -865802399
-  m_SortingLayer: -2
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -9020359781391833327, guid: 880ddaa7eea9d4ad58158b20036e01cc, type: 3}

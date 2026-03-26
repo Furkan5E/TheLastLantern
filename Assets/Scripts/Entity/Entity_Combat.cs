@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class Entity_Combat : MonoBehaviour
 {
-    private Entity_VFX vfx;
+    protected Entity_VFX vfx;
     public float damage = 1;
 
     [Header("Target Detection")]
     [SerializeField] private Transform targetCheck;
     [SerializeField] private float targetCheckRadius = 1;
-    [SerializeField] private LayerMask whatIsTarget;
+    [SerializeField] protected LayerMask whatIsTarget;
 
     private void Awake()
     {
@@ -32,7 +32,7 @@ public class Entity_Combat : MonoBehaviour
     {
         return Physics2D.OverlapCircleAll(targetCheck.position, targetCheckRadius, whatIsTarget);
     }
-    private void OnDrawGizmos()
+    protected virtual void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(targetCheck.position, targetCheckRadius);
     }
