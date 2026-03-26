@@ -49,6 +49,12 @@ public class DialogueToggle : MonoBehaviour
         {
             playerInRange = false;
             SetHintVisible(false);
+
+            // Close dialogue if it's open
+            if (dialogueObject != null && dialogueObject.activeSelf)
+            {
+                dialogueObject.SetActive(false);
+            }
         }
     }
 
