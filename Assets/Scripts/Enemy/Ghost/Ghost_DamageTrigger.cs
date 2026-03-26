@@ -14,6 +14,8 @@ public class Ghost_DamageTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log($"[Ghost_DamageTrigger] OnTriggerEnter2D hit: {collision.gameObject.name}");
+
         if (collision.gameObject.GetComponent<Player>() != null)
         {
             ghost.OnPlayerEnterDamageTrigger(collision.gameObject);
