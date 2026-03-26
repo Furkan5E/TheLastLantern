@@ -15,4 +15,4 @@ MonoBehaviour:
   dialogueId: tutorial_005
   lines:
   - speaker: Tutorial
-    text: Congratulations! You've completed the tutorial!
+    text: Stick to the wall on the right and glide to the bottom!
