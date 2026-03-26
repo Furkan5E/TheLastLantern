@@ -15,6 +15,5 @@ MonoBehaviour:
   dialogueId: tutorial_004
   lines:
   - speaker: Tutorial
-    text: You did it! Now let's get out of here.
-  - speaker: Tutorial
-    text: Head right and climb to the top!
+    text: Looks like the path ahead is blocked. Climb to the top and search for another
+      exit.

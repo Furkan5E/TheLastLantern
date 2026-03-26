@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e311febb20205cf429a82a1f2be77842, type: 3}
-  m_Name: tutorial_002
+  m_Name: tutorial_007
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
-  dialogueId: tutorial_002
+  dialogueId: tutorial_007
   lines:
   - speaker: Tutorial
-    text: Now dash jump as far to the right as possible.
+    text: Tutorial complete! A massive adventure awaits!

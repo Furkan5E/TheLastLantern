@@ -17,6 +17,6 @@ MonoBehaviour:
   - speaker: Tutorial
     text: Welcome to the tutorial! Let's learn how to move around.
   - speaker: Tutorial
-    text: WASD for movement and "spacebar" to jump.
+    text: Use the "wasd" keys for movement and "spacebar" to jump.
   - speaker: Tutorial
     text: You can also dash by pressing "Shift" while airborne
