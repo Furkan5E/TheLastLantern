@@ -60,6 +60,7 @@ MonoBehaviour:
   m_SourceFontFilePath: 
   m_AtlasPopulationMode: 1
   InternalDynamicOS: 0
+<<<<<<< HEAD
   m_GlyphTable:
   - m_Index: 641
     m_Metrics:
@@ -119,6 +120,10 @@ MonoBehaviour:
     m_Unicode: 48
     m_GlyphIndex: 19
     m_Scale: 1
+=======
+  m_GlyphTable: []
+  m_CharacterTable: []
+>>>>>>> 129e707 (feat: added flying enemy)
   m_AtlasTextures:
   - {fileID: 8394019501693039424}
   m_AtlasTextureIndex: 0
@@ -129,6 +134,7 @@ MonoBehaviour:
   m_AtlasHeight: 1024
   m_AtlasPadding: 9
   m_AtlasRenderMode: 4165
+<<<<<<< HEAD
   m_UsedGlyphRects:
   - m_X: 0
     m_Y: 0
@@ -158,6 +164,13 @@ MonoBehaviour:
   - m_X: 191
     m_Y: 0
     m_Width: 832
+=======
+  m_UsedGlyphRects: []
+  m_FreeGlyphRects:
+  - m_X: 0
+    m_Y: 0
+    m_Width: 1023
+>>>>>>> 129e707 (feat: added flying enemy)
     m_Height: 1023
   m_FontFeatureTable:
     m_MultipleSubstitutionRecords: []

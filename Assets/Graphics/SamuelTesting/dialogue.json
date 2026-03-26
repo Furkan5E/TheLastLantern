@@ -1,0 +1,90 @@
+{
+  "dialogues": [
+    {
+      "id": "test_001",
+      "lines": [
+        {
+          "speaker": "Old Sign",
+          "text": "Careful.. Danger up ahead..."
+        }
+      ]
+    },
+    {
+      "id": "tutorial_001",
+      "lines": [
+        {
+          "speaker": "Tutorial Guide",
+          "text": "Welcome to the tutorial! Let's learn how to move around."
+        },
+        {
+          "speaker": "Tutorial Guide",
+          "text": "Use the arrow keys to move your character."
+        },
+        {
+          "speaker": "Tutorial Guide",
+          "text": "Use the left shift key while in air to dash."
+        }
+      ]
+    },
+    {
+      "id": "tutorial_002",
+      "lines": [
+        {
+          "speaker": "Tutorial Guide",
+          "text": "Great job! Now jump as far as possible to the right."
+        },
+        {
+          "speaker": "Tutorial Guide",
+          "text": "Trust me."
+        }
+      ]
+    },
+    {
+      "id": "tutorial_003",
+      "lines": [
+        {
+          "speaker": "Tutorial Guide",
+          "text": "NO TIME TO EXPLAIN! ATTACK. CLICK. CLICK. CLICK. CLICK."
+        }
+      ]
+    },
+    {
+      "id": "tutorial_004",
+      "lines": [
+        {
+          "speaker": "Tutorial Guide",
+          "text": "You did it! Now let's move on to the next section."
+        },
+        {
+          "speaker": "Tutorial Guide",
+          "text": "Uhh... pretend this is a trap and you have to dash through it to avoid it."
+        },
+        {
+          "speaker": "Tutorial Guide",
+          "text": "It will be added for real later..."
+        },
+        {
+          "speaker": "Tutorial Guide",
+          "text": "Just go through the door and climb to the top of the shrine to finish the tutorial."
+        }
+      ]
+    },
+    {
+      "id": "tutorial_005",
+      "lines": [
+        {
+          "speaker": "Tutorial Guide",
+          "text": "Congratulations! You've completed the tutorial!"
+        },
+        {
+          "speaker": "Tutorial Guide",
+          "text": "Now... wait for the rest of the game to be made before you can play it!"
+        },
+        {
+          "speaker": "Tutorial Guide",
+          "text": "Just hang around or something.. vee please make the tutorial look nice for the demo.."
+        }
+      ]
+    }
+  ]
+}
