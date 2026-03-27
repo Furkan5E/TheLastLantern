@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e311febb20205cf429a82a1f2be77842, type: 3}
-  m_Name: test_001
+  m_Name: tutorial_006
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
-  dialogueId: test_001
+  dialogueId: tutorial_006
   lines:
-  - speaker: Old Sign
-    text: Careful.. Danger up ahead!
+  - speaker: Tutorial
+    text: Just one more room... careful of the little Burden

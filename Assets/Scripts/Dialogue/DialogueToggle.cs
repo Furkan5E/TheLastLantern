@@ -5,6 +5,7 @@ public class DialogueToggle : MonoBehaviour
 {
     [SerializeField] private GameObject dialogueObject;
     [SerializeField] private DialogueSO dialogueData;
+    [SerializeField] private GameObject hint0;
     [SerializeField] private PlayerInput playerInput;
     [SerializeField] private Player player;
     [SerializeField] private string interactActionName = "Interact";
@@ -13,11 +14,24 @@ public class DialogueToggle : MonoBehaviour
     private InputAction interactAction;
     private bool isSubscribed;
 
+    private void Awake()
+    {
+        if (hint0 == null)
+        {
+            Transform qm0 = transform.Find("hint_0");
+            if (qm0 != null)
+                hint0 = qm0.gameObject;
+        }
+
+        SetHintVisible(false);
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             playerInRange = true;
+            SetHintVisible(true);
 
             if (playerInput == null)
                 playerInput = other.GetComponentInParent<PlayerInput>();
@@ -34,16 +48,25 @@ public class DialogueToggle : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = false;
+            SetHintVisible(false);
+
+            // Close dialogue if it's open
+            if (dialogueObject != null && dialogueObject.activeSelf)
+            {
+                dialogueObject.SetActive(false);
+            }
         }
     }
 
     private void OnEnable()
     {
+        SetHintVisible(false);
         ResolveAndSubscribeInteractAction();
     }
 
     private void OnDisable()
     {
+        SetHintVisible(false);
         UnsubscribeInteractAction();
     }
 
@@ -112,5 +135,11 @@ public class DialogueToggle : MonoBehaviour
         }
 
         return null;
+    }
+
+    private void SetHintVisible(bool isVisible)
+    {
+        if (hint0 != null)
+            hint0.SetActive(isVisible);
     }
 }
