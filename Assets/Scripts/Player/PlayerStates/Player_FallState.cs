@@ -28,6 +28,7 @@ public class Player_FallState : Player_AiredState
     {
         base.Update();
 
+        //handle coyote time and jump input
         if (player.coyoteTimeCounter > 0)
             player.coyoteTimeCounter -= Time.deltaTime;
 
@@ -43,7 +44,6 @@ public class Player_FallState : Player_AiredState
             else
                 stateMachine.ChangeState(player.idleState);
         }
-
         if (player.wallDetected)
             stateMachine.ChangeState(player.wallSlideState);
     }

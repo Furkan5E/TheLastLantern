@@ -10,6 +10,8 @@ public class Player_IdleState : Player_GroundedState
     {
         base.Enter();
 
+        //stop horizontal movement when entering idle state
+        //prevents sliding
         player.SetVelocity(0, rb.linearVelocity.y);
     }
 

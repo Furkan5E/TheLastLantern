@@ -6,6 +6,10 @@ public class Player_Combat : Entity_Combat
     [SerializeField] private Transform downTargetCheck;
     [SerializeField] private float downCheckRadius = 1f;
 
+    /// <summary>
+    /// casts a downward overlap circle to detect and damage entities below the player
+    /// returns true if a valid target is struck, signaling the animation trigger to apply a bounce effect
+    /// </summary>
     public bool PerformDownAttack()
     {
         if (downTargetCheck == null)
@@ -26,6 +30,9 @@ public class Player_Combat : Entity_Combat
         return colliders.Length > 0;
     }
 
+    /// <summary>
+    /// checks the forward attack radius for counterable objects
+    /// </summary>
     public bool CounterAttackPerformed()
     {
         bool hasCountered = false;

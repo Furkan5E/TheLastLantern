@@ -10,6 +10,8 @@ public class Player : Entity
     public Entity_VFX vfx { get; private set; }
     public Entity_Health health { get; private set; }
 
+    #region States
+
     public Player_IdleState idleState { get; private set; }
     public Player_MoveState moveState { get; private set; }
     public Player_JumpState jumpState { get; private set; }
@@ -20,6 +22,7 @@ public class Player : Entity
     public Player_WallJumpState wallJumpState { get; private set; }
     public Player_DashState dashState { get; private set; }
     public Player_DeadState deadState { get; private set; }
+    #endregion
 
     [Header("Attack Details")]
     public Vector2[] attackVelocity;
@@ -87,6 +90,7 @@ public class Player : Entity
         stateMachine.ChangeState(deadState);
     }
 
+    //delays the state transition until the end of the frame to prevent input overlap
     public void EnterAttackStateWithDelay()
     {
         if (queuedAttackCoroutine != null)
@@ -106,6 +110,7 @@ public class Player : Entity
         collectable?.OnCollect(this);
     }
     
+    //input handling
     private void OnEnable()
     {
         input.Enable();

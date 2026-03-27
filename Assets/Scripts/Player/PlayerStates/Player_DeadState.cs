@@ -10,6 +10,7 @@ public class Player_DeadState : PlayerState
     {
         base.Enter();
 
+        //disable player input and physics
         input.Disable();
         rb.simulated = false;
     }

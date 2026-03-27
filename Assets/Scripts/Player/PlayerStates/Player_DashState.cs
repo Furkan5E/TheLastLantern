@@ -12,9 +12,9 @@ public class Player_DashState : PlayerState
     public override void Enter()
     {
         base.Enter();
-
         player.dashCooldownTimer = player.dashCooldown;
 
+        //determine dash direction based on input, if no input use facing direction
         dashDir = player.moveInput.x != 0 ? (int)Mathf.Sign(player.moveInput.x) : player.facingDir;
         stateTimer = player.dashDuration;
 
