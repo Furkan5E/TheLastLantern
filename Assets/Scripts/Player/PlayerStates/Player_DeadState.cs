@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Player_DeadState : PlayerState
 {
@@ -12,5 +14,12 @@ public class Player_DeadState : PlayerState
 
         input.Disable();
         rb.simulated = false;
+        player.StartCoroutine(ReloadSceneAfterDelay());
+    }
+
+    private IEnumerator ReloadSceneAfterDelay()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
