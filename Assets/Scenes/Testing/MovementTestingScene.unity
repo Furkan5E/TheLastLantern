@@ -139,14 +139,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6852440089791974555, guid: dc820eadb492144bba9a80cc02c4133f, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 6852440089791974555, guid: dc820eadb492144bba9a80cc02c4133f, type: 3}
-      propertyPath: InitialModule.startSize.minScalar
-      value: 0.2
-      objectReference: {fileID: 0}
     - target: {fileID: 9089035516960712554, guid: dc820eadb492144bba9a80cc02c4133f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.2969813
@@ -414,23 +406,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1932813360}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &650508828 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6979261232414772687, guid: 8f3bb7e3865197c43b17bfc8c30e90d3, type: 3}
-  m_PrefabInstance: {fileID: 1781836043987855487}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &650508829
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 650508828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce9120a53cde0ac4394a0fef45cfd5f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CurrencyManager
 --- !u!1 &661809269
 GameObject:
   m_ObjectHideFlags: 0
@@ -1692,10 +1667,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6979261232414772687, guid: 8f3bb7e3865197c43b17bfc8c30e90d3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 650508829}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f3bb7e3865197c43b17bfc8c30e90d3, type: 3}
 --- !u!1001 &7689357301464594824
 PrefabInstance:

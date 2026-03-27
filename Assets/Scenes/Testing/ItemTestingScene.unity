@@ -811,6 +811,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e32328de20444ce5b5a9047173e3bf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Item
+  itemType: 0
+  healthIncrease: 1
+  speedIncrease: 1
+  healingAmount: 1
 --- !u!1 &593724020 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1695362547131182685, guid: b7d0b7a9e412443de8b45440de3e504a, type: 3}
@@ -3019,10 +3023,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 602614868905063904, guid: ee8bee95c6e0c4e9cb62d474464feb4d, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3371574533111217421, guid: ee8bee95c6e0c4e9cb62d474464feb4d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.56
@@ -3167,7 +3167,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8004073103300912173, guid: 0752d49bb8eea41c49bd28ffefb7c168, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8808905333717129414, guid: 0752d49bb8eea41c49bd28ffefb7c168, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3218,6 +3218,7 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 722337271}
   - {fileID: 2746555666046474538}
   - {fileID: 57292143}
   - {fileID: 1925830658}
