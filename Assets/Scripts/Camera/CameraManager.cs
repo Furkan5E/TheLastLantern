@@ -34,6 +34,9 @@ public class CameraManager : MonoBehaviour
 
     private void Update()
     {
+        if (rb == null || player == null || composer == null)
+            return;
+
         bool shouldFall = rb.gravityScale > fallGravityScale && !player.wallDetected;
         float transitionSpeed = shouldFall ? fallTransitionSpeed : recoverTransitionSpeed;
 
