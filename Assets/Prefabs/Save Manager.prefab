@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3647750202916212359}
   - component: {fileID: 1749640138139077661}
+  - component: {fileID: 6294075490833448052}
   m_Layer: 0
   m_Name: Save Manager
   m_TagString: Untagged
@@ -46,3 +47,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SaveManager
   fileName: save.json
   encryptData: 1
+--- !u!114 &6294075490833448052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6979261232414772687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce9120a53cde0ac4394a0fef45cfd5f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CurrencyManager
